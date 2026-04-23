@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murabex — Digital Asset Exchange</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <img src="assets/icons/murabex.png" alt="Murabex" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#lifecycle">Lifecycle</a></li>
+            <li><a href="#who">Who It's For</a></li>
+            <li><a href="#why">Why Murabex</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Request a demo</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="assets/images/dunes.png" alt="" class="hero-bg-image">
+    <div class="hero-inner">
+        <h1><span class="gold-text">Murabex</span><br>Digital Asset<br>Exchange</h1>
+        <p class="hero-sub">A unified digital ecosystem that manages the entire Murabaha lifecycle, from initial quote to real-time settlement, ensuring precision, transparency, and full Sharia compliance. Streamlines workflows, reduces manual effort, and delivers a fast, seamless experience for modern financial institutions.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-gold with-arrow">Request a demo</a>
+            <a href="#features" class="btn-outline">Explore Features</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-box">
+            <p class="eyebrow">ABOUT MURABEX</p>
+            <h2 class="section-title">Built for Islamic Finance</h2>
+            <div class="about-grid">
+                <div class="about-col">
+                    <p>Murabex is an enterprise-grade platform purpose-built for Sharia-compliant Murabaha transactions. It connects banks, liquidity providers, asset issuers and customers in a unified ecosystem.</p>
+                    <p>The architecture combines a high-performance Rust-based quote engine with a reactive Java backend and a modern trading UI &mdash; delivering institutional-grade speed, compliance and usability out of the box.</p>
+                </div>
+                <div class="about-col">
+                    <p>Murabex is built by <strong>Exactpro Systems</strong>, a company with deep expertise in independent AI-driven financial technology testing and platform engineering.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AGREEMENT LIFECYCLE -->
+<section class="lifecycle" id="lifecycle">
+    <div class="container">
+        <p class="eyebrow">Workflow</p>
+        <h2 class="section-title">Agreement Lifecycle</h2>
+        <p class="section-sub">A Murabaha agreement progresses through a series of controlled states &mdash; with backward paths for re-review and repeated acquisition cycles.</p>
+
+        <div style="overflow-x: auto;">
+            <svg id="lifecycle-svg" viewBox="0 0 1150 420" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
+                <defs>
+                    <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#c9a84c" stroke-width="1.2"/></marker>
+                    <marker id="arrow-active" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#e4ca7a" stroke-width="1.5"/></marker>
+                    <marker id="arrow-dim" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#3d3828" stroke-width="1.2"/></marker>
+                    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.7" fill="rgba(201,168,76,0.04)"/></pattern>
+                    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feFlood flood-color="#c9a84c" flood-opacity="0.35" result="c"/><feComposite in="c" in2="b" operator="in" result="s"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <radialGradient id="pg"><stop offset="0%" stop-color="#e4ca7a"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></radialGradient>
+                </defs>
+                <rect width="1150" height="420" rx="10" fill="#101118"/>
+                <rect width="1150" height="420" rx="10" fill="url(#dots)"/>
+
+                <!-- Forward edges -->
+                <line class="fwd-edge" x1="190" y1="135" x2="230" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="370" y1="135" x2="410" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="550" y1="135" x2="590" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="730" y1="135" x2="770" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="910" y1="135" x2="950" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="1020" y1="170" x2="1020" y2="265" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="950" y1="300" x2="910" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="770" y1="300" x2="730" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="590" y1="300" x2="370" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="230" y1="300" x2="190" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+
+                <!-- Backward edges -->
+                <path d="M300,170 L300,210 L120,210 L120,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="210" y="222" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Reject</text>
+                <path d="M480,170 L480,195 L300,195 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <path d="M660,170 L660,205 L300,205 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <path d="M840,170 L840,215 L300,215 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <path d="M1020,100 L1020,70 L480,70 L480,100" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="750" y="63" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Quote Expired / Cancel</text>
+                <path d="M840,335 L840,370 L300,370 L300,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="570" y="383" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Maintain (skip transfer)</text>
+                <line x1="120" y1="170" x2="120" y2="265" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="108" y="220" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="end">Cancel</text>
+                <path d="M300,265 L300,240 L270,240 L270,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="242" y="252" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="end">Repeat</text>
+                <path d="M370,300 L405,300 L405,355 L1020,355 L1020,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <text x="700" y="348" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Acquire Asset</text>
+
+                <!-- Nodes row 1 -->
+                <g class="lc-node" data-index="0"><rect class="node-glow" x="50" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="50" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="120" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Draft</text><text class="node-desc" x="120" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Application received</text></g>
+                <g class="lc-node" data-index="1"><rect class="node-glow" x="230" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="230" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="300" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Review</text><text class="node-desc" x="300" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Pending approval</text></g>
+                <g class="lc-node" data-index="2"><rect class="node-glow" x="410" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="410" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="480" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Approved</text><text class="node-desc" x="480" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Ready for execution</text></g>
+                <g class="lc-node" data-index="3"><rect class="node-glow" x="590" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="590" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="660" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Execute</text><text class="node-desc" x="660" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Finding liquidity</text></g>
+                <g class="lc-node" data-index="4"><rect class="node-glow" x="770" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="770" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="840" y="127" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Liquidity</text><text x="840" y="141" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Found</text><text class="node-desc" x="840" y="157" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Quotes received</text></g>
+                <g class="lc-node" data-index="5"><rect class="node-glow" x="950" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="950" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="1020" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Acquisition</text><text class="node-desc" x="1020" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Acquiring asset</text></g>
+
+                <!-- Nodes row 2 -->
+                <g class="lc-node" data-index="6"><rect class="node-glow" x="950" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="950" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="1020" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Acquired</text><text class="node-desc" x="1020" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Asset acquired</text></g>
+                <g class="lc-node" data-index="7"><rect class="node-glow" x="770" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="770" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="840" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Hold</text><text class="node-desc" x="840" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Owned by client</text></g>
+                <g class="lc-node" data-index="8"><rect class="node-glow" x="590" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="590" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="660" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Transfer</text><text class="node-desc" x="660" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Transferring asset</text></g>
+                <g class="lc-node" data-index="9"><rect class="node-glow" x="230" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="230" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="300" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Complete</text><text class="node-desc" x="300" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Awaiting finalization</text></g>
+                <g class="lc-node" data-index="10"><rect class="node-glow" x="50" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="50" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="120" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Done</text><text class="node-desc" x="120" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Agreement finalized</text></g>
+
+                <circle id="particle" r="4" fill="url(#pg)" opacity="0"/>
+
+                <!-- Legend -->
+                <rect x="30" y="392" width="380" height="22" rx="5" fill="rgba(201,168,76,0.02)" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+                <line x1="42" y1="403" x2="60" y2="403" stroke="#c9a84c" stroke-width="1.5"/>
+                <text x="64" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Forward flow</text>
+                <line x1="135" y1="403" x2="153" y2="403" stroke="#3d3828" stroke-width="1" stroke-dasharray="4,3"/>
+                <text x="157" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Backward / alternative</text>
+                <circle cx="310" cy="403" r="3.5" fill="#e4ca7a" opacity=".7"/>
+                <text x="318" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Active step</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- CAPABILITIES / KEY FEATURES -->
+<section class="features" id="features">
+    <div class="container">
+        <p class="eyebrow">Capabilities</p>
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-sub">Everything you need to run institutional-grade Murabaha financing.</p>
+
+        <div class="features-grid">
+            <div class="f-card"><div class="f-icon">&#9889;</div><div><h3>Quote Engine</h3><p>Dedicated low-latency RFQ matching engine. Multi-participant auctions with composite scoring across price, settlement time, latency, and risk factors.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#128196;</div><div><h3>Murabaha Agreements</h3><p>Complete end-to-end agreement lifecycle from draft to settlement. Asset basket composition, Sharia approval integration, and linkage to quotes and ledger operations.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#9638;</div><div><h3>User Interface</h3><p>Professional UI with real-time agreement management, market data, order book and quote management &mdash; seamlessly integrated with the Murabaha agreement workflow and settlement process.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#9733;</div><div><h3>Liquidity Provider Scoring</h3><p>Automated effectiveness scoring: response rate, response time, execution rate, price quality, and fill ratio. Historical snapshots for trend analysis.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#9881;</div><div><h3>Reference Data Management</h3><p>Centralised hub for users, participants, currencies, instruments, trading venues, price tick tables, and risk parameters.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#9741;</div><div><h3>Distributed Ledger &amp; Settlement</h3><p>Dual-mode settlement: off-chain and on-chain. Issue, transfer, redeem, and lock/unlock tokenized assets with drop-copy replication.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#127912;</div><div><h3>Tokenised Assets</h3><p>Digital representation of financial assets on a distributed ledger with full lifecycle management &mdash; issuance, transfer, and redemption with immutable records.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#128274;</div><div><h3>Auth &amp; Access Control</h3><p>Role-based access control with participant-scoped data filtering. Each user sees only their organisation's data, with a full audit trail.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#128203;</div><div><h3>Compliance-Native</h3><p>Immutable audit trail with full before/after state snapshots. Built-in Sharia approval workflow with jurisdiction binding and conformance verification.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#128268;</div><div><h3>Easy Integration</h3><p>OpenAPI-based REST interface, real-time WebSocket with topic-based subscriptions, and FIX protocol gateway for institutional connectivity.</p></div></div>
+            <div class="f-card"><div class="f-icon">&#9729;</div><div><h3>Cloud-Native Scalability</h3><p>Kubernetes-ready with Helm charts, automated database migrations, and built-in monitoring via Prometheus and Grafana.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY MURABEX -->
+<section class="why-section" id="why">
+    <div class="container">
+        <h2 class="why-title">Why Murabex</h2>
+        <p class="why-sub">Each transition is governed by role-based permissions and recorded in an immutable audit log. Dashed paths show alternative flows: re-review, cancellation, repeated acquisition, and direct maintenance completion.</p>
+        <div class="why-grid">
+            <div class="w-card"><img src="assets/icons/why/sharia-compliant.svg" alt="" class="w-icon"><h4>Sharia-Compliant by Design</h4><p>Architecture built from the ground up for Islamic finance workflows and approval processes.</p></div>
+            <div class="w-card"><img src="assets/icons/why/flexible-settlement.svg" alt="" class="w-icon"><h4>Flexible Settlement</h4><p>Off-chain, on-chain, or hybrid mode &mdash; choose based on your regulatory requirements.</p></div>
+            <div class="w-card"><img src="assets/icons/why/sub-second-matching.svg" alt="" class="w-icon"><h4>Sub-Second Matching</h4><p>Dedicated high-performance engine delivers nanosecond-precision RFQ matching at institutional scale.</p></div>
+            <div class="w-card"><img src="assets/icons/why/customizable-workspaces.svg" alt="" class="w-icon"><h4>Customizable Workspaces</h4><p>Each user saves their own layouts, columns, and filters. Export/import as JSON.</p></div>
+            <div class="w-card"><img src="assets/icons/why/full-audit-trail.svg" alt="" class="w-icon"><h4>Full Audit Trail</h4><p>Every operation recorded immutably. Complete before/after snapshots for all state changes.</p></div>
+            <div class="w-card"><img src="assets/icons/why/open-standards.svg" alt="" class="w-icon"><h4>Open Standards</h4><p>OpenAPI 3.1 spec, FIX protocol reporting, Ethereum/Besu for DLT &mdash; no vendor lock-in.</p></div>
+            <div class="w-card w-card-wide"><img src="assets/icons/why/production-ready.svg" alt="" class="w-icon"><h4>Production-Ready</h4><p>Kubernetes, Prometheus, Grafana, centralized logging, and CI/CD pipelines out of the box.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="who-section" id="who">
+    <div class="container">
+        <h2 class="section-title">Who It's For</h2>
+        <div class="audience-box">
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <img src="assets/icons/audience/banks.svg" alt="" class="audience-icon">
+                    <h4>Banks</h4>
+                    <p>Manage customers, issue requests for quotes (RFQs), oversee Murabaha agreements and control settlement workflows.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/liquidity.svg" alt="" class="audience-icon">
+                    <h4>Liquidity Providers</h4>
+                    <p>Respond to RFQs, compete on pricing and monitor effectiveness scores with real-time feedback.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/assets.svg" alt="" class="audience-icon">
+                    <h4>Asset Issuers</h4>
+                    <p>Issue and manage tokenized assets through on-chain and off-chain ledger operations.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/regulators.svg" alt="" class="audience-icon">
+                    <h4>Regulators</h4>
+                    <p>Full immutable audit trail, transactions reporting with nanosecond timestamps, FIX reporting and conformance tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECHNOLOGY / ARCHITECTURE -->
+<section class="tech" id="tech">
+    <div class="container">
+        <p class="eyebrow">TECHNOLOGY</p>
+        <h2 class="section-title">Architecture</h2>
+
+        <img src="assets/images/Architecture.jpg" alt="Murabex Architecture" class="arch-image">
+    </div>
+</section>
+
+<!-- READY TO TRANSFORM (CTA) -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="cta-title">Ready to Transform Your<br>Murabaha Operations?</h2>
+        <p class="cta-sub">We welcome institutional inquiries and investor conversations.</p>
+        <div class="cta-box">
+            <img src="assets/images/dunes.png" alt="" class="cta-bg-image">
+            <div class="cta-steps">
+                <div class="cta-step">
+                    <div class="cta-step-num">1</div>
+                    <h4>Request a Demo</h4>
+                    <p>See the full platform in action with real Murabaha workflows.</p>
+                </div>
+                <div class="cta-step">
+                    <div class="cta-step-num">2</div>
+                    <h4>Pilot Project</h4>
+                    <p>Deploy in your infrastructure and onboard your participants.</p>
+                </div>
+                <div class="cta-step">
+                    <div class="cta-step-num">3</div>
+                    <h4>Go Live</h4>
+                    <p>Full integration with your systems and blockchain network.</p>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-gold btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-top">
+            <a href="#" class="logo"><img src="assets/icons/murabex.png" alt="Murabex" class="logo-img"></a>
+            <div class="footer-links">
+                <a href="#">Policy Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-socials">
+                <a href="#" aria-label="X">&#120143;</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Murabex. All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/lifecycle.js"></script>
+</body>
+</html>
