@@ -640,11 +640,35 @@ nav {
 
 .lifecycle .section-sub { max-width: 100%; }
 
+.lifecycle-scroll {
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-arch) transparent;
+}
+
+.lifecycle-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lifecycle-scroll::-webkit-scrollbar-track {
+    background: rgba(201, 168, 76, 0.04);
+    border-radius: 4px;
+}
+
+.lifecycle-scroll::-webkit-scrollbar-thumb {
+    background: var(--border-arch);
+    border-radius: 4px;
+    transition: background .2s ease;
+}
+
+.lifecycle-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
 .lifecycle-status {
     font-size: 14px;
     color: var(--text-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     margin: calc(-1 * var(--s-4)) 0 var(--s-3);
 }
 

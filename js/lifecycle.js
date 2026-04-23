@@ -7,13 +7,13 @@
     ];
 
     const TOTAL = centers.length;
-    const STEP_DURATION = 2500;
-    const TRAVEL_DURATION = 1200;
-    const PAUSE_AT_END = 3500;
+    const STEP_DURATION = 4000;
+    const TRAVEL_DURATION = 1800;
+    const PAUSE_AT_END = 4500;
 
     const statusLabels = [
-        'DRAFT', 'REVIEW', 'APPROVED', 'EXECUTE', 'LIQUIDITY FOUND',
-        'ACQUISITION', 'ACQUIRED', 'HOLD', 'TRANSFER', 'COMPLETE', 'DONE'
+        'Draft', 'Review', 'Approved', 'Execute', 'Liquidity Found',
+        'Acquisition', 'Acquired', 'Hold', 'Transfer', 'Complete', 'Done'
     ];
 
     const svg = document.getElementById('lifecycle-svg');
@@ -43,9 +43,9 @@
             });
         });
         fwdEdges.forEach(function (e) {
-            e.setAttribute('stroke', '#c9a84c');
-            e.setAttribute('stroke-width', '1.5');
-            e.setAttribute('marker-end', 'url(#arrow-gold)');
+            e.setAttribute('stroke', '#3d3828');
+            e.setAttribute('stroke-width', '1');
+            e.setAttribute('marker-end', 'url(#arrow-dim)');
         });
         particle.setAttribute('opacity', '0');
         currentStep = -1;
@@ -79,9 +79,9 @@
     function highlightEdge(index) {
         if (index < fwdEdges.length) {
             var e = fwdEdges[index];
-            e.setAttribute('stroke', '#e4ca7a');
-            e.setAttribute('stroke-width', '2.5');
-            e.setAttribute('marker-end', 'url(#arrow-active)');
+            e.setAttribute('stroke', '#c9a84c');
+            e.setAttribute('stroke-width', '1.5');
+            e.setAttribute('marker-end', 'url(#arrow-gold)');
         }
     }
 

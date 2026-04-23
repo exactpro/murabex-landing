@@ -147,9 +147,9 @@
         <p class="eyebrow">Workflow</p>
         <h2 class="section-title">Agreement Lifecycle</h2>
         <p class="section-sub">A Murabaha agreement progresses through controlled states &ndash; with backward paths for re-review and repeated acquisition cycles. Each transition is governed by role-based permissions and recorded in an immutable audit log.</p>
-        <p class="lifecycle-status">Current status: <span class="lc-status-value">APPROVED</span></p>
+        <p class="lifecycle-status">Current status: <span class="lc-status-value">Draft</span></p>
 
-        <div style="overflow-x: auto;">
+        <div class="lifecycle-scroll">
             <svg id="lifecycle-svg" viewBox="0 0 1150 380" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
                 <defs>
                     <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#c9a84c" stroke-width="1.2"/></marker>
@@ -163,27 +163,26 @@
                 <rect width="1150" height="380" rx="10" fill="url(#dots)"/>
 
                 <!-- Forward edges -->
-                <line class="fwd-edge" x1="190" y1="135" x2="230" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="370" y1="135" x2="410" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="550" y1="135" x2="590" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="730" y1="135" x2="770" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="910" y1="135" x2="950" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="1020" y1="170" x2="1020" y2="265" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="950" y1="300" x2="910" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="770" y1="300" x2="730" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="590" y1="300" x2="370" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
-                <line class="fwd-edge" x1="230" y1="300" x2="190" y2="300" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
+                <line class="fwd-edge" x1="190" y1="135" x2="230" y2="135" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="370" y1="135" x2="410" y2="135" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="550" y1="135" x2="590" y2="135" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="730" y1="135" x2="770" y2="135" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="910" y1="135" x2="950" y2="135" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="1020" y1="170" x2="1020" y2="265" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="950" y1="300" x2="910" y2="300" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="770" y1="300" x2="730" y2="300" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="590" y1="300" x2="370" y2="300" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
+                <line class="fwd-edge" x1="230" y1="300" x2="190" y2="300" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
 
                 <!-- Backward edges -->
-                <path d="M300,170 L300,210 L120,210 L120,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M480,170 L480,195 L300,195 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M660,170 L660,205 L300,205 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M840,170 L840,215 L300,215 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <path d="M1020,100 L1020,70 L480,70 L480,100" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M840,335 L840,345 L300,345 L300,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <line x1="480" y1="170" x2="480" y2="215" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4"/>
+                <line x1="660" y1="170" x2="660" y2="215" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4"/>
+                <path d="M840,170 L840,215 L120,215 L120,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <line x1="120" y1="170" x2="120" y2="265" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M300,265 L300,240 L270,240 L270,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <path d="M370,300 L405,300 L405,347 L1020,347 L1020,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <line x1="120" y1="265" x2="120" y2="170" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <line x1="300" y1="265" x2="300" y2="170" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
+                <path class="fwd-edge" d="M840,335 L840,360 L300,360 L300,335" fill="none" stroke="#3d3828" stroke-width="1" marker-end="url(#arrow-dim)"/>
 
                 <!-- Nodes row 1 -->
                 <g class="lc-node" data-index="0"><rect class="node-glow" x="50" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="50" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="120" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Draft</text><text class="node-desc" x="120" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Application received</text></g>
