@@ -26,7 +26,7 @@
             <li><a href="#tech">Technology</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Request a demo</a>
+        <a href="#contact" class="nav-cta open-contact">Request a demo</a>
     </div>
 </nav>
 
@@ -37,7 +37,7 @@
         <h1><span class="gold-text">Murabex</span><br>Digital Asset<br>Exchange</h1>
         <p class="hero-sub">A unified digital ecosystem that manages the entire Murabaha lifecycle, from initial quote to real-time settlement, ensuring precision, transparency, and full Sharia compliance. Streamlines workflows, reduces manual effort, and delivers a fast, seamless experience for modern financial institutions.</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn-gold with-arrow">Request a demo</a>
+            <a href="#contact" class="btn-gold with-arrow open-contact">Request a demo</a>
             <a href="#features" class="btn-outline">Explore Features</a>
         </div>
     </div>
@@ -67,7 +67,7 @@
     <div class="container">
         <p class="eyebrow">Workflow</p>
         <h2 class="section-title">Agreement Lifecycle</h2>
-        <p class="section-sub">A Murabaha agreement progresses through a series of controlled states &mdash; with backward paths for re-review and repeated acquisition cycles.</p>
+        <p class="section-sub">A Murabaha agreement progresses through controlled states &ndash; with backward paths for re-review and repeated acquisition cycles. Each transition is governed by role-based permissions and recorded in an immutable audit log. Dashed paths show alternative flows: re-review, cancellation, repeated acquisition and direct maintenance completion.</p>
 
         <div style="overflow-x: auto;">
             <svg id="lifecycle-svg" viewBox="0 0 1150 420" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
@@ -247,7 +247,7 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="#contact" class="btn-gold btn-lg">Contact Us</a>
+                <a href="#contact" class="btn-gold btn-lg open-contact">Contact Us</a>
             </div>
         </div>
     </div>
@@ -274,6 +274,25 @@
     </div>
 </footer>
 
+<!-- CONTACT MODAL -->
+<div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="contact-modal-title">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog" role="document">
+        <button type="button" class="modal-close" aria-label="Close" data-modal-close>&times;</button>
+        <h3 class="modal-title" id="contact-modal-title">Get in touch</h3>
+        <p class="modal-sub">Tell us a bit about yourself — our team will reach out shortly.</p>
+        <!-- Nutshell Form -->
+        <div id="nutshell-form-WbCvXl"></div>
+        <script>
+        (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
+        Nutsheller('initForm', {form: 'WbCvXl', instance: '384698', authToken: '', target: 'nutshell-form-WbCvXl'});
+        </script>
+        <script type="module" src="https://loader.nutshell.com/nutsheller-esm.js"></script>
+        <!-- End Nutshell Form -->
+    </div>
+</div>
+
 <script src="js/lifecycle.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>

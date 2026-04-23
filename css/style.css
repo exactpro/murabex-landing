@@ -341,17 +341,14 @@ nav {
 .about { background: var(--bg-medium); }
 
 .about-box {
-    background: transparent;
+    background: #2E313A;
+    border: 1px solid #414652;
     border-radius: var(--r-xl);
-    padding: 0;
+    padding: 50px 40px;
+    margin: 0 -40px;
 }
 
 .about-box .eyebrow { margin-bottom: var(--s-1); }
-
-.about-box .section-title {
-    font-size: clamp(28px, 3.5vw, 40px);
-    margin-bottom: var(--s-4);
-}
 
 .about-grid {
     display: grid;
@@ -379,6 +376,8 @@ nav {
    LIFECYCLE
    ========================================================= */
 .lifecycle { background: var(--bg-lifted); }
+
+.lifecycle .section-sub { max-width: 100%; }
 
 /* =========================================================
    CAPABILITIES / KEY FEATURES
@@ -763,6 +762,258 @@ footer {
 }
 
 /* =========================================================
+   MODAL
+   ========================================================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-3);
+}
+
+.modal.is-open { display: flex; }
+
+body.modal-open { overflow: hidden; }
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: modal-fade .2s ease-out;
+}
+
+.modal-dialog {
+    position: relative;
+    background: var(--bg-lifted);
+    border: 1px solid var(--border-arch);
+    border-radius: var(--r-xl);
+    padding: var(--s-5) var(--s-4);
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modal-slide .25s ease-out;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-arch) transparent;
+}
+
+.modal-dialog::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-dialog::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 12px 0;
+}
+
+.modal-dialog::-webkit-scrollbar-thumb {
+    background: var(--border-arch);
+    border-radius: 4px;
+    transition: background .2s ease;
+}
+
+.modal-dialog::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-card);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 24px;
+    line-height: 1;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.modal-close:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: rgba(201, 168, 76, 0.05);
+}
+
+.modal-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 8px;
+    padding-right: 40px;
+}
+
+.modal-sub {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: var(--s-3);
+}
+
+#nutshell-form-WbCvXl {
+    min-height: 280px;
+}
+
+/* Nutshell form (Emotion-hashed classes — Murabex dark/gold theme) */
+#WbCvXl,
+#WbCvXl * {
+    font-family: 'Inter', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* Form outer wrapper — dark background to match modal */
+.css-8p2yze.css-8p2yze {
+    background-color: var(--bg-lifted) !important;
+    min-height: 100%;
+    position: relative;
+}
+
+/* Input / textarea / select — underline style */
+#WbCvXl #form-fields-container .css-s998u6.css-s998u6,
+#WbCvXl .css-s998u6.css-s998u6 {
+    border-radius: 0;
+    color: var(--text);
+    font-size: 15px;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #2E313A;
+    transition: border-color .2s ease;
+}
+
+#WbCvXl #form-fields-container .css-s998u6.css-s998u6::placeholder,
+#WbCvXl .css-s998u6.css-s998u6::placeholder {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Legend visibility fix (from user's working config) */
+#WbCvXl #form-fields-container fieldset legend.css-bh3upc {
+    display: block !important;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+}
+
+#WbCvXl #form-fields-container .css-bh3upc.css-bh3upc,
+#WbCvXl .css-bh3upc.css-bh3upc {
+    display: none;
+}
+
+/* Row / field-wrapper padding */
+#WbCvXl #form-fields-container .css-15dpn4a.css-15dpn4a,
+#WbCvXl .css-15dpn4a.css-15dpn4a {
+    padding: 12px 0;
+}
+
+/* Focus state */
+#WbCvXl .css-29pv05.css-29pv05 input[type]:focus,
+#WbCvXl .css-29pv05.css-29pv05 textarea:focus {
+    outline: none;
+    outline-offset: -2px;
+    border-bottom: 1px solid var(--gold) !important;
+}
+
+/* Form heading (centered, gold) */
+#WbCvXl #form-fields-container .css-15evt26.css-15evt26,
+#WbCvXl .css-15evt26.css-15evt26 {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--gold);
+    margin-top: 20px;
+    letter-spacing: 0.3px;
+}
+
+/* Generic label styles (fallback for other text classes) */
+#WbCvXl label {
+    color: var(--text-muted) !important;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Submit button — gold gradient */
+#WbCvXl button[type="submit"],
+#WbCvXl input[type="submit"],
+#WbCvXl button:not([type="button"]) {
+    background: var(--gradient-gold-radial) !important;
+    color: #1A1A1A !important;
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 14px 28px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(225, 176, 71, 0.2) !important;
+    transition: transform .2s ease, box-shadow .2s ease !important;
+}
+
+#WbCvXl button[type="submit"]:hover,
+#WbCvXl input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-gold) !important;
+}
+
+/* Checkbox / radio — gold accent */
+#WbCvXl input[type="checkbox"],
+#WbCvXl input[type="radio"] {
+    accent-color: var(--gold);
+}
+
+/* Links inside form */
+#WbCvXl a {
+    color: var(--gold-light);
+}
+
+#WbCvXl a:hover {
+    color: var(--gold);
+}
+
+/* Success message */
+#WbCvXl-success-message {
+    color: var(--gold);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Error / validation messages (guess common pattern) */
+#WbCvXl [class*="error"],
+#WbCvXl [role="alert"] {
+    color: #FF7070;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+@keyframes modal-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modal-slide {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 1200px) {
@@ -773,8 +1024,9 @@ footer {
     .why-grid { grid-template-columns: repeat(2, 1fr); }
     .w-card-wide { grid-column: span 2; }
     .audience-grid { grid-template-columns: repeat(2, 1fr); }
-    .audience-card:nth-child(2) { border-right: none; }
     .audience-card:nth-child(even) { border-right: none; }
+    .audience-card:nth-child(1),
+    .audience-card:nth-child(2) { border-bottom: 1px solid #2E313A; }
 }
 
 @media (max-width: 900px) {
@@ -788,21 +1040,15 @@ footer {
     .nav-toggle { display: block; }
 
     .about-grid { grid-template-columns: 1fr; gap: var(--s-3); }
-    .about-box { padding: var(--s-4); }
+    .about-box { padding: var(--s-4); margin: 0; }
 
     .features-grid,
     .why-grid,
-    .audience-grid,
     .cta-steps { grid-template-columns: 1fr; }
 
     .w-card-wide { grid-column: span 1; }
 
-    .audience-card {
-        border-right: none;
-        border-bottom: 1px solid var(--border-card);
-        padding: var(--s-3) 0;
-    }
-    .audience-card:last-child { border-bottom: none; }
+    .audience-card { padding: 16px; }
 
     .hero-bg-image { opacity: 0.3; width: 110%; right: -10%; top: auto; bottom: 0; }
 
