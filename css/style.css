@@ -742,52 +742,49 @@ nav {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-2);
+    gap: 1px;
+    background: var(--border-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--r-lg);
+    overflow: hidden;
 }
 
 .f-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    border-radius: var(--r-lg);
-    padding: var(--s-4);
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: var(--s-2);
-    transition: transform .3s ease, border-color .3s ease;
+    gap: 12px;
+    position: relative;
+    transition: background .3s ease, box-shadow .3s ease;
 }
 
 .f-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--gold);
+    background: #22252C;
+    box-shadow: inset 0 0 0 1px var(--gold);
+    z-index: 1;
 }
 
-.f-card-highlight {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 1px var(--gold), 0 8px 24px rgba(201, 168, 76, 0.08);
-}
+/* round outer corners so hover outline follows the container curve (desktop: 3 cols, 12 cards) */
+.f-card:first-child { border-top-left-radius: calc(var(--r-lg) - 1px); }
+.f-card:nth-child(3) { border-top-right-radius: calc(var(--r-lg) - 1px); }
+.f-card:nth-child(10) { border-bottom-left-radius: calc(var(--r-lg) - 1px); }
+.f-card:last-child { border-bottom-right-radius: calc(var(--r-lg) - 1px); }
 
-.f-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--r-md);
-    background: var(--gold-brown);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-light);
-    font-size: 24px;
-    flex-shrink: 0;
+.f-card:hover h3 {
+    color: var(--gold);
 }
 
 .f-card h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.3;
     color: var(--text);
+    transition: color .3s ease;
 }
 
 .f-card p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
     color: var(--text-muted);
     font-weight: 400;
@@ -929,7 +926,7 @@ nav {
    CTA (Ready to Transform)
    ========================================================= */
 .cta-section {
-    background: var(--bg);
+    background: var(--bg-lifted);
     text-align: center;
 }
 
@@ -1042,7 +1039,7 @@ nav {
    FOOTER
    ========================================================= */
 footer {
-    background: var(--bg-lifted);
+    background: var(--bg);
     padding: var(--s-4) 0 var(--s-3);
 }
 
@@ -1371,6 +1368,12 @@ body.modal-open { overflow: hidden; }
     .audience-card:nth-child(even) { border-right: none; }
     .audience-card:nth-child(1),
     .audience-card:nth-child(2) { border-bottom: 1px solid #2E313A; }
+
+    /* features grid corners: 2 cols → 1, 2, 11, 12 */
+    .f-card:nth-child(3),
+    .f-card:nth-child(10) { border-top-right-radius: 0; border-bottom-left-radius: 0; }
+    .f-card:nth-child(2) { border-top-right-radius: calc(var(--r-lg) - 1px); }
+    .f-card:nth-child(11) { border-bottom-left-radius: calc(var(--r-lg) - 1px); }
 }
 
 @media (max-width: 900px) {
@@ -1385,13 +1388,85 @@ body.modal-open { overflow: hidden; }
 
     .about-box { padding: var(--s-4); margin: 0; }
 
-    .features-grid,
     .cta-steps { grid-template-columns: 1fr; }
 
-    .why-grid { grid-template-columns: repeat(2, 1fr); }
-    .w-card-wide { grid-column: span 2; }
+    /* features → horizontal slider, 2 cards per view, snap on swipe */
+    .features-slider {
+        position: relative;
+    }
+    .features-slider::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 48px;
+        background: linear-gradient(to right, rgba(40, 42, 49, 0), var(--bg-medium));
+        pointer-events: none;
+        border-top-right-radius: var(--r-lg);
+        border-bottom-right-radius: var(--r-lg);
+        transition: opacity .3s ease;
+    }
+    .features-slider::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid var(--gold);
+        border-right: 2px solid var(--gold);
+        transform: translateY(-50%) rotate(45deg);
+        pointer-events: none;
+        z-index: 2;
+        animation: features-slider-hint 1.6s ease-in-out infinite;
+        transition: opacity .3s ease;
+    }
+    .features-slider.is-at-end::after,
+    .features-slider.is-at-end::before {
+        opacity: 0;
+    }
+    @keyframes features-slider-hint {
+        0%, 100% { transform: translate(0, -50%) rotate(45deg); }
+        50%      { transform: translate(4px, -50%) rotate(45deg); }
+    }
+    .features-grid {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(50% - 0.5px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    .f-card { scroll-snap-align: start; padding: 20px; }
 
-    .audience-card { padding: 16px; }
+    /* single-row corners: reset all mid-card radii, round only first & last */
+    .f-card:nth-child(2),
+    .f-card:nth-child(3),
+    .f-card:nth-child(10),
+    .f-card:nth-child(11) { border-top-right-radius: 0; border-bottom-left-radius: 0; }
+    .f-card:first-child {
+        border-top-left-radius: calc(var(--r-lg) - 1px);
+        border-bottom-left-radius: calc(var(--r-lg) - 1px);
+    }
+    .f-card:last-child {
+        border-top-right-radius: calc(var(--r-lg) - 1px);
+        border-bottom-right-radius: calc(var(--r-lg) - 1px);
+    }
+
+    .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .w-card-wide { grid-column: span 2; }
+    .w-card { padding: 18px; gap: 10px; }
+    .w-icon { width: 44px; height: 44px; }
+    .w-card h4 { font-size: 18px; }
+    .w-card p { font-size: 14px; }
+
+    .audience-card { padding: 16px; gap: 10px; }
+    .audience-icon { width: 40px; height: 40px; }
+    .audience-card h4 { font-size: 18px; }
+    .audience-card p { font-size: 14px; line-height: 22px; }
 
     .hero-bg-image { opacity: 0.3; width: 110%; right: -10%; top: auto; bottom: 0; }
 
