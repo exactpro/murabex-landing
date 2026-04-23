@@ -7,9 +7,14 @@
     ];
 
     const TOTAL = centers.length;
-    const STEP_DURATION = 1200;
-    const TRAVEL_DURATION = 600;
-    const PAUSE_AT_END = 2000;
+    const STEP_DURATION = 2500;
+    const TRAVEL_DURATION = 1200;
+    const PAUSE_AT_END = 3500;
+
+    const statusLabels = [
+        'DRAFT', 'REVIEW', 'APPROVED', 'EXECUTE', 'LIQUIDITY FOUND',
+        'ACQUISITION', 'ACQUIRED', 'HOLD', 'TRANSFER', 'COMPLETE', 'DONE'
+    ];
 
     const svg = document.getElementById('lifecycle-svg');
     if (!svg) return;
@@ -17,8 +22,13 @@
     const nodes = svg.querySelectorAll('.lc-node');
     const particle = document.getElementById('particle');
     const fwdEdges = svg.querySelectorAll('.fwd-edge');
+    const statusEl = document.querySelector('.lc-status-value');
     let currentStep = -1;
     let isRunning = false;
+
+    function setStatus(text) {
+        if (statusEl) statusEl.textContent = text;
+    }
 
     function resetAll() {
         nodes.forEach(function (g) {
@@ -48,20 +58,20 @@
         var glow = g.querySelector('.node-glow');
 
         if (isCurrent) {
-            bg.setAttribute('fill', 'rgba(201,168,76,0.15)');
+            bg.setAttribute('fill', '#e4ca7a');
             bg.setAttribute('stroke', '#c9a84c');
-            bg.setAttribute('stroke-width', '2');
+            bg.setAttribute('stroke-width', '1');
             glow.setAttribute('opacity', '1');
             g.querySelectorAll('text').forEach(function (t) {
-                t.setAttribute('fill', t.classList.contains('node-desc') ? '#a09880' : '#e4ca7a');
+                t.setAttribute('fill', t.classList.contains('node-desc') ? 'rgba(26,26,26,0.7)' : '#1a1a1a');
             });
         } else {
-            bg.setAttribute('fill', 'rgba(201,168,76,0.08)');
-            bg.setAttribute('stroke', 'rgba(201,168,76,0.4)');
-            bg.setAttribute('stroke-width', '1.5');
+            bg.setAttribute('fill', 'rgba(201,168,76,0.18)');
+            bg.setAttribute('stroke', 'rgba(201,168,76,0.5)');
+            bg.setAttribute('stroke-width', '1');
             glow.setAttribute('opacity', '0');
             g.querySelectorAll('text').forEach(function (t) {
-                t.setAttribute('fill', t.classList.contains('node-desc') ? '#4e4a44' : '#c9a84c');
+                t.setAttribute('fill', t.classList.contains('node-desc') ? '#8a8680' : '#e4ca7a');
             });
         }
     }
@@ -105,6 +115,7 @@
             setTimeout(function () {
                 if (isRunning) {
                     resetAll();
+                    setStatus('—');
                     setTimeout(advance, 400);
                 }
             }, PAUSE_AT_END);
@@ -115,6 +126,7 @@
             highlightNode(i, false);
         }
         highlightNode(currentStep, true);
+        setStatus(statusLabels[currentStep]);
 
         if (currentStep > 0) {
             highlightEdge(currentStep - 1);

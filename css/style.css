@@ -71,7 +71,23 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    text-wrap: pretty;
 }
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.why-title,
+.cta-title,
+.hero h1,
+.accordion-title,
+.f-card h3,
+.w-card h4,
+.audience-card h4,
+.cta-step h4 {
+    text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
 
 img, svg { display: block; max-width: 100%; height: auto; }
 
@@ -169,6 +185,7 @@ section {
     background: var(--gradient-gold-radial);
     color: #1A1A1A;
     font-weight: 700;
+    border: none;
     box-shadow: 0 4px 14px rgba(225, 176, 71, 0.2);
 }
 
@@ -461,13 +478,7 @@ nav {
 
 .about-box .eyebrow { margin-bottom: var(--s-1); }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-5);
-}
-
-.about-col p {
+.about-text p {
     font-size: 20px;
     font-weight: 400;
     line-height: 32px;
@@ -476,11 +487,150 @@ nav {
     margin-bottom: var(--s-2);
 }
 
-.about-col p:last-child { margin-bottom: 0; }
+.about-text p:last-child { margin-bottom: 0; }
 
-.about-col strong {
+.about-text strong {
     color: var(--text);
     font-weight: 600;
+}
+
+/* Accordion inside About */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: var(--s-5);
+}
+
+.accordion-item {
+    background: #1B1D22;
+    border: 1px solid #414652;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color .3s ease, background .3s ease;
+}
+
+.accordion-item[data-open] {
+    border-color: var(--gold);
+    background: #1D1F25;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--s-2);
+    width: 100%;
+    padding: 24px 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: left;
+    transition: background .2s ease;
+    font-family: inherit;
+}
+
+.accordion-header:hover { background: rgba(201, 168, 76, 0.04); }
+
+.accordion-header:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+}
+
+.accordion-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.35;
+    transition: color .2s ease;
+}
+
+.accordion-item[data-open] .accordion-title { color: var(--gold-light); }
+
+.accordion-icon {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-white-6);
+    border-radius: 50%;
+    transition: background .3s ease, border-color .3s ease;
+}
+
+.accordion-item[data-open] .accordion-icon {
+    background: var(--gradient-gold-radial);
+    border-color: transparent;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--gold);
+    border-radius: 1px;
+    transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s ease, background .3s ease;
+}
+
+.accordion-icon::before {
+    width: 12px;
+    height: 2px;
+    margin: -1px 0 0 -6px;
+}
+
+.accordion-icon::after {
+    width: 2px;
+    height: 12px;
+    margin: -6px 0 0 -1px;
+}
+
+.accordion-item[data-open] .accordion-icon::before,
+.accordion-item[data-open] .accordion-icon::after {
+    background: #1A1A1A;
+}
+
+.accordion-item[data-open] .accordion-icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+/* Smooth height animation via grid-template-rows trick */
+.accordion-body-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item[data-open] .accordion-body-wrap {
+    grid-template-rows: 1fr;
+}
+
+.accordion-body {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.accordion-body > p,
+.accordion-body > div {
+    padding: 0 28px;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-muted);
+}
+
+.accordion-body > p:first-child { padding-top: 4px; }
+.accordion-body > p:last-child { padding-bottom: 24px; }
+.accordion-body p + p { margin-top: var(--s-2); }
+
+.accordion-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: var(--s-3) 28px 24px;
+    max-width: calc(100% - 56px);
+    border-radius: 10px;
 }
 
 /* =========================================================
@@ -489,6 +639,76 @@ nav {
 .lifecycle { background: var(--bg-lifted); }
 
 .lifecycle .section-sub { max-width: 100%; }
+
+.lifecycle-status {
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: calc(-1 * var(--s-4)) 0 var(--s-3);
+}
+
+.lc-status-value {
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.lifecycle-legend {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: var(--s-3);
+    padding: 10px 16px;
+    background: rgba(201, 168, 76, 0.03);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    border-radius: 6px;
+}
+
+.lc-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.lc-legend-box {
+    width: 18px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid;
+    flex-shrink: 0;
+}
+
+.lc-legend-visited {
+    background: rgba(201, 168, 76, 0.18);
+    border-color: rgba(201, 168, 76, 0.5);
+}
+
+.lc-legend-current {
+    background: #e4ca7a;
+    border-color: #c9a84c;
+}
+
+.lc-legend-pending {
+    background: rgba(201, 168, 76, 0.03);
+    border-color: rgba(201, 168, 76, 0.15);
+}
+
+.lc-legend-line-dashed {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    border-top: 1px dashed #75603E;
+    flex-shrink: 0;
+}
+
+.lifecycle-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: var(--s-2);
+}
 
 /* =========================================================
    CAPABILITIES / KEY FEATURES
@@ -681,17 +901,6 @@ nav {
 /* =========================================================
    TECHNOLOGY / ARCHITECTURE DIAGRAM
    ========================================================= */
-.tech {
-    background: var(--bg-medium);
-}
-
-.arch-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: var(--r-xl);
-}
-
 /* =========================================================
    CTA (Ready to Transform)
    ========================================================= */
@@ -1150,14 +1359,13 @@ body.modal-open { overflow: hidden; }
     .nav-cta { display: none; }
     .nav-toggle { display: flex; }
 
-    .about-grid { grid-template-columns: 1fr; gap: var(--s-3); }
     .about-box { padding: var(--s-4); margin: 0; }
 
     .features-grid,
-    .why-grid,
     .cta-steps { grid-template-columns: 1fr; }
 
-    .w-card-wide { grid-column: span 1; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .w-card-wide { grid-column: span 2; }
 
     .audience-card { padding: 16px; }
 

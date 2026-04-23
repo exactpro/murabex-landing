@@ -31,6 +31,25 @@
     });
 })();
 
+/* Accordion — smooth open/close with data-open attribute */
+(function () {
+    document.querySelectorAll('.accordion-item').forEach(function (item) {
+        const header = item.querySelector('.accordion-header');
+        if (!header) return;
+
+        header.addEventListener('click', function () {
+            const isOpen = item.hasAttribute('data-open');
+            if (isOpen) {
+                item.removeAttribute('data-open');
+                header.setAttribute('aria-expanded', 'false');
+            } else {
+                item.setAttribute('data-open', '');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+})();
+
 /* Scroll spy — highlight active nav link by current section */
 (function () {
     const sections = document.querySelectorAll('section[id], footer[id]');

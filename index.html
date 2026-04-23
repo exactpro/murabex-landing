@@ -26,7 +26,6 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#why">Why Murabex</a></li>
             <li><a href="#who">Who It's For</a></li>
-            <li><a href="#tech">Architecture</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#contact" class="btn-gold nav-cta open-contact">Request a demo</a>
@@ -47,8 +46,7 @@
             <li><a href="#features" data-menu-close><span class="mobile-menu-num">03</span>Features</a></li>
             <li><a href="#why" data-menu-close><span class="mobile-menu-num">04</span>Why Murabex</a></li>
             <li><a href="#who" data-menu-close><span class="mobile-menu-num">05</span>Who it's for</a></li>
-            <li><a href="#tech" data-menu-close><span class="mobile-menu-num">06</span>Architecture</a></li>
-            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">07</span>Contact</a></li>
+            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">06</span>Contact</a></li>
         </ul>
     </div>
 </div>
@@ -57,8 +55,8 @@
 <section class="hero" id="hero">
     <img src="assets/images/dunes.png" alt="" class="hero-bg-image">
     <div class="hero-inner">
-        <h1><span class="gold-text">Murabex</span><br>Digital Asset<br>Exchange</h1>
-        <p class="hero-sub">A unified digital ecosystem that manages the entire Murabaha lifecycle, from initial quote to real-time settlement, ensuring precision, transparency, and full Sharia compliance. Streamlines workflows, reduces manual effort, and delivers a fast, seamless experience for modern financial institutions.</p>
+        <h1><span class="gold-text">Murabex</span><br>Commodity Murabaha<br>Platform</h1>
+        <p class="hero-sub">Powering shared digital asset ecosystems where customer facilitation and liquidity provision work in tandem to drive growth.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn-gold with-arrow open-contact">Request a demo</a>
             <a href="#features" class="btn-outline">Explore Features</a>
@@ -71,14 +69,72 @@
     <div class="container">
         <div class="about-box">
             <p class="eyebrow">ABOUT MURABEX</p>
-            <h2 class="section-title">Built for Islamic Finance</h2>
-            <div class="about-grid">
-                <div class="about-col">
-                    <p>Murabex is an enterprise-grade platform purpose-built for Sharia-compliant Murabaha transactions. It connects banks, liquidity providers, asset issuers and customers in a unified ecosystem.</p>
-                    <p>The architecture combines a high-performance Rust-based quote engine with a reactive Java backend and a modern trading UI &mdash; delivering institutional-grade speed, compliance and usability out of the box.</p>
+            <h2 class="section-title">Shari’ah-compliant, Community-driven, Reliable and Efficient</h2>
+            <div class="about-text">
+                <p>Murabex is an enterprise-grade digital exchange platform that enables financial institutions to streamline the execution of Murabaha agreements for their customers. As part of a community-driven collaborative service, it brings together prominent exchange and clearing members who not only serve their own customers but also provide liquidity to other participants. The result is a shared ecosystem where customer facilitation and liquidity provision mutually reinforce each other.</p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button type="button" class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Configuration and deployment options</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-body-wrap">
+                        <div class="accordion-body">
+                            <p>Murabex offers flexible configuration and deployment options, enabling adaptation to the economic and regulatory landscape of each jurisdiction. The platform supports both decentralised and centralised setups among participants, provides a user interface and API integration and can be configured to operate with selected distributed ledger networks. The Murabex platform enables settlement on distributed ledgers, off-book or on-book, through integration with the national exchange infrastructure.</p>
+                            <img src="assets/images/Configuration%20and%20deployment%20options.svg" alt="Configuration and deployment options diagram" class="accordion-image">
+                        </div>
+                    </div>
                 </div>
-                <div class="about-col">
-                    <p>Murabex is built by <strong>Exactpro Systems</strong>, a company with deep expertise in independent AI-driven financial technology testing and platform engineering.</p>
+
+                <div class="accordion-item">
+                    <button type="button" class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Shari’ah compliance</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-body-wrap">
+                        <div class="accordion-body">
+                            <p>A core requirement of the Shari’ah-compliant workflow is that each participant bears their own ownership risk, including the risk of loss, damage and price fluctuation for the full duration of their period of ownership. Ownership risk transfers strictly upon legal title transfer and constructive possession, as evidenced through exchange execution, clearing and settlement processes. Price risk cannot be eliminated entirely, as exposure to genuine commercial risk is inseparable from trade and a prerequisite for lawful profit. Rather than attempting to remove this risk, Murabex enables participants to manage it responsibly through coordination, transparency and market participation. The service supports all participants in reducing unnecessary exposure by organising a consistent and continuous flow of transactions, thereby contributing to overall economic activity, shared prosperity and sustainable market development.</p>
+                            <p>The platform maintains a registry of all relevant Shari’ah approvals issued by internal and external governing bodies. Each approval is clearly scoped, covering asset types, individual assets, document templates, process steps and participating liquidity providers. The registry supports versioning, expiry management and revocation handling, with clear rules governing the impact of approval changes on in-flight and completed transactions. Relevant approval documents are attached to each step of the workflow, ensuring full transparency and traceability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button type="button" class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Prevention of sell-and-buy-back arrangements</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-body-wrap">
+                        <div class="accordion-body">
+                            <p>All transactions are executed using exchange-negotiated trades and the established clearing infrastructure, ensuring that every transfer is legally valid, formally recognised and fully auditable. Sell-and-buy-back arrangements are explicitly excluded. The platform actively prevents workflows that would result in economic equivalence to sell-and-buy-back arrangements, even if executed through multiple formal transactions. At every stage of the workflow, the service seeks the best available liquidity providers for its users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button type="button" class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Price volatility mitigation</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-body-wrap">
+                        <div class="accordion-body">
+                            <p>Price-risk mitigation is achieved through the presence of multiple independent liquidity providers, competitive responses to requests for unilateral promises (Waʿd), rapid transaction turnaround and the cumulative effect of a high volume of executed deals. No liquidity provider is subject to exclusivity, minimum response requirements or economic incentives that would create a de-facto obligation to transact. Price stability emerges from the collective participation of the community rather than reliance on any single entity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button type="button" class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Customer’s right to retain tokens</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-body-wrap">
+                        <div class="accordion-body">
+                            <p>The customer always retains an unconditional right to keep the acquired assets. This right is strictly enforced by the platform and is clearly reflected in the user interface, contractual documentation and immutable audit records. A third-party Waʿd may be disclosed to the Murabaha customer only after ownership transfer and constructive possession have been completed in accordance with exchange, clearing and settlement rules, provided that such disclosure creates no obligation, no economic dependency and no pre-arranged exit. Where participants act on behalf of customers or other members, the service enforces explicit and limited agency (wakālah) arrangements, with clearly defined scope, authority and duration. All agency actions are transparently recorded and auditable.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,10 +146,11 @@
     <div class="container">
         <p class="eyebrow">Workflow</p>
         <h2 class="section-title">Agreement Lifecycle</h2>
-        <p class="section-sub">A Murabaha agreement progresses through controlled states &ndash; with backward paths for re-review and repeated acquisition cycles. Each transition is governed by role-based permissions and recorded in an immutable audit log. Dashed paths show alternative flows: re-review, cancellation, repeated acquisition and direct maintenance completion.</p>
+        <p class="section-sub">A Murabaha agreement progresses through controlled states &ndash; with backward paths for re-review and repeated acquisition cycles. Each transition is governed by role-based permissions and recorded in an immutable audit log.</p>
+        <p class="lifecycle-status">Current status: <span class="lc-status-value">APPROVED</span></p>
 
         <div style="overflow-x: auto;">
-            <svg id="lifecycle-svg" viewBox="0 0 1150 420" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
+            <svg id="lifecycle-svg" viewBox="0 0 1150 380" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
                 <defs>
                     <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#c9a84c" stroke-width="1.2"/></marker>
                     <marker id="arrow-active" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#e4ca7a" stroke-width="1.5"/></marker>
@@ -102,8 +159,8 @@
                     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feFlood flood-color="#c9a84c" flood-opacity="0.35" result="c"/><feComposite in="c" in2="b" operator="in" result="s"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     <radialGradient id="pg"><stop offset="0%" stop-color="#e4ca7a"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></radialGradient>
                 </defs>
-                <rect width="1150" height="420" rx="10" fill="#101118"/>
-                <rect width="1150" height="420" rx="10" fill="url(#dots)"/>
+                <rect width="1150" height="380" rx="10" fill="#101118"/>
+                <rect width="1150" height="380" rx="10" fill="url(#dots)"/>
 
                 <!-- Forward edges -->
                 <line class="fwd-edge" x1="190" y1="135" x2="230" y2="135" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
@@ -119,20 +176,14 @@
 
                 <!-- Backward edges -->
                 <path d="M300,170 L300,210 L120,210 L120,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="210" y="222" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Reject</text>
                 <path d="M480,170 L480,195 L300,195 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <path d="M660,170 L660,205 L300,205 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <path d="M840,170 L840,215 L300,215 L300,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <path d="M1020,100 L1020,70 L480,70 L480,100" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="750" y="63" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Quote Expired / Cancel</text>
-                <path d="M840,335 L840,370 L300,370 L300,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="570" y="383" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Maintain (skip transfer)</text>
+                <path d="M840,335 L840,345 L300,345 L300,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
                 <line x1="120" y1="170" x2="120" y2="265" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="108" y="220" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="end">Cancel</text>
                 <path d="M300,265 L300,240 L270,240 L270,170" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="242" y="252" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="end">Repeat</text>
-                <path d="M370,300 L405,300 L405,355 L1020,355 L1020,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
-                <text x="700" y="348" fill="#3d3828" font-size="8" font-family="Inter,sans-serif" text-anchor="middle">Acquire Asset</text>
+                <path d="M370,300 L405,300 L405,347 L1020,347 L1020,335" fill="none" stroke="#3d3828" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#arrow-dim)"/>
 
                 <!-- Nodes row 1 -->
                 <g class="lc-node" data-index="0"><rect class="node-glow" x="50" y="100" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="50" y="100" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="120" y="131" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Draft</text><text class="node-desc" x="120" y="147" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Application received</text></g>
@@ -150,17 +201,17 @@
                 <g class="lc-node" data-index="10"><rect class="node-glow" x="50" y="265" width="140" height="70" rx="7" fill="none" stroke="#c9a84c" stroke-width="2" filter="url(#glow)" opacity="0"/><rect class="node-bg" x="50" y="265" width="140" height="70" rx="7" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/><text x="120" y="296" fill="#8a8680" font-size="10.5" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Done</text><text class="node-desc" x="120" y="312" fill="#4e4a44" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle">Agreement finalized</text></g>
 
                 <circle id="particle" r="4" fill="url(#pg)" opacity="0"/>
-
-                <!-- Legend -->
-                <rect x="30" y="392" width="380" height="22" rx="5" fill="rgba(201,168,76,0.02)" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
-                <line x1="42" y1="403" x2="60" y2="403" stroke="#c9a84c" stroke-width="1.5"/>
-                <text x="64" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Forward flow</text>
-                <line x1="135" y1="403" x2="153" y2="403" stroke="#3d3828" stroke-width="1" stroke-dasharray="4,3"/>
-                <text x="157" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Backward / alternative</text>
-                <circle cx="310" cy="403" r="3.5" fill="#e4ca7a" opacity=".7"/>
-                <text x="318" y="407" fill="#4e4a44" font-size="8" font-family="Inter,sans-serif">Active step</text>
             </svg>
         </div>
+
+        <div class="lifecycle-legend">
+            <span class="lc-legend-item"><span class="lc-legend-box lc-legend-visited"></span>Visited</span>
+            <span class="lc-legend-item"><span class="lc-legend-box lc-legend-current"></span>Current</span>
+            <span class="lc-legend-item"><span class="lc-legend-box lc-legend-pending"></span>Pending</span>
+            <span class="lc-legend-item"><span class="lc-legend-line-dashed"></span>Possible</span>
+        </div>
+
+        <p class="lifecycle-note">Dashed paths show alternative flows: re-review, cancellation, repeated acquisition and direct maintenance completion.</p>
     </div>
 </section>
 
@@ -169,20 +220,20 @@
     <div class="container">
         <p class="eyebrow">Capabilities</p>
         <h2 class="section-title">Key Features</h2>
-        <p class="section-sub">Everything you need to run institutional-grade Murabaha financing.</p>
+        <p class="section-sub">Everything you need to run institutional-grade Islamic financing.</p>
 
         <div class="features-grid">
-            <div class="f-card"><div class="f-icon">&#9889;</div><div><h3>Quote Engine</h3><p>Dedicated low-latency RFQ matching engine. Multi-participant auctions with composite scoring across price, settlement time, latency, and risk factors.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#128196;</div><div><h3>Murabaha Agreements</h3><p>Complete end-to-end agreement lifecycle from draft to settlement. Asset basket composition, Sharia approval integration, and linkage to quotes and ledger operations.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#9638;</div><div><h3>User Interface</h3><p>Professional UI with real-time agreement management, market data, order book and quote management &mdash; seamlessly integrated with the Murabaha agreement workflow and settlement process.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#9733;</div><div><h3>Liquidity Provider Scoring</h3><p>Automated effectiveness scoring: response rate, response time, execution rate, price quality, and fill ratio. Historical snapshots for trend analysis.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#9881;</div><div><h3>Reference Data Management</h3><p>Centralised hub for users, participants, currencies, instruments, trading venues, price tick tables, and risk parameters.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#9741;</div><div><h3>Distributed Ledger &amp; Settlement</h3><p>Dual-mode settlement: off-chain and on-chain. Issue, transfer, redeem, and lock/unlock tokenized assets with drop-copy replication.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#127912;</div><div><h3>Tokenised Assets</h3><p>Digital representation of financial assets on a distributed ledger with full lifecycle management &mdash; issuance, transfer, and redemption with immutable records.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#128274;</div><div><h3>Auth &amp; Access Control</h3><p>Role-based access control with participant-scoped data filtering. Each user sees only their organisation's data, with a full audit trail.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#128203;</div><div><h3>Compliance-Native</h3><p>Immutable audit trail with full before/after state snapshots. Built-in Sharia approval workflow with jurisdiction binding and conformance verification.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#128268;</div><div><h3>Easy Integration</h3><p>OpenAPI-based REST interface, real-time WebSocket with topic-based subscriptions, and FIX protocol gateway for institutional connectivity.</p></div></div>
-            <div class="f-card"><div class="f-icon">&#9729;</div><div><h3>Cloud-Native Scalability</h3><p>Kubernetes-ready with Helm charts, automated database migrations, and built-in monitoring via Prometheus and Grafana.</p></div></div>
+            <div class="f-card"><h3>Quote Engine</h3><p>Low-latency RFQ matching engine. Coordinates competitive responses to unilateral promises (Waʿd) from multiple independent liquidity providers.</p></div>
+            <div class="f-card"><h3>Murabaha Agreements</h3><p>Complete end-to-end workflow execution and agreement lifecycle from draft to settlement. Shari’ah-compliant asset basket composition and linkage to quotes and ledger operations.</p></div>
+            <div class="f-card"><h3>User Interface</h3><p>Professional UI with real-time agreement management, market data, order book and quote management &ndash; seamlessly integrated with the Murabaha agreement workflow and settlement process.</p></div>
+            <div class="f-card"><h3>Liquidity Provider Scoring</h3><p>Automated effectiveness scoring: response rate, response time, execution rate, price quality and fill ratio. Historical snapshots for trend analysis. Supports the selection of the best available liquidity providers.</p></div>
+            <div class="f-card"><h3>Reference Data Management</h3><p>Centralised hub for users, participants, currencies, instruments, trading venues, price tick tables and risk parameters. Maintains a registry of all relevant Shari’ah approvals issued by internal and external governing bodies.</p></div>
+            <div class="f-card"><h3>Distributed Ledger &amp; Settlement</h3><p>Dual-mode settlement: off-chain and on-chain. Issue, transfer, redeem and lock/unlock tokenized assets with drop-copy replication. Executes transfers through exchange-negotiated trades and established clearing infrastructure, so every transfer is legally valid, formally recognised and fully auditable.</p></div>
+            <div class="f-card"><h3>Tokenised assets</h3><p>Digital representation of financial assets on a distributed ledger. Full lifecycle management &ndash; from issuance through transfer to redemption &ndash; with transparent ownership tracking.</p></div>
+            <div class="f-card"><h3>Auth &amp; Access Control</h3><p>Role-based access control with participant-scoped data filtering. Each user sees only their organisation's data, with a full audit trail of all actions.</p></div>
+            <div class="f-card"><h3>Compliance-native</h3><p>Immutable audit trail with full before/after state snapshots for every operation. Built-in Shari’ah approval workflow with jurisdiction binding, issuing body tracking and conformance verification across messages, state transitions and traceability.</p></div>
+            <div class="f-card"><h3>Easy integration into existing institutional ecosystems</h3><p>Designed to connect with the existing pre-trade, trading and post-trade FI infrastructure.</p></div>
+            <div class="f-card"><h3>Cloud-native scalability for accelerated deployment</h3><p>Deployed as containerised, orchestrated services with zero-downtime deployment. Supports per-institution deployment and jurisdiction-bound data residency to meet the operational and regulatory constraints of participating banks and clearing members.</p></div>
         </div>
     </div>
 </section>
@@ -191,15 +242,14 @@
 <section class="why-section" id="why">
     <div class="container">
         <h2 class="why-title">Why Murabex</h2>
-        <p class="why-sub">Each transition is governed by role-based permissions and recorded in an immutable audit log. Dashed paths show alternative flows: re-review, cancellation, repeated acquisition, and direct maintenance completion.</p>
+        <p class="why-sub">Purpose-built for Islamic finance, not retrofitted from conventional trading systems.</p>
         <div class="why-grid">
-            <div class="w-card"><img src="assets/icons/why/sharia-compliant.svg" alt="" class="w-icon"><h4>Sharia-Compliant by Design</h4><p>Architecture built from the ground up for Islamic finance workflows and approval processes.</p></div>
-            <div class="w-card"><img src="assets/icons/why/flexible-settlement.svg" alt="" class="w-icon"><h4>Flexible Settlement</h4><p>Off-chain, on-chain, or hybrid mode &mdash; choose based on your regulatory requirements.</p></div>
+            <div class="w-card"><img src="assets/icons/why/sharia-compliant.svg" alt="" class="w-icon"><h4>Shari’ah-Compliant by Design</h4><p>Architecture built from the ground up for Islamic finance workflows and approval processes.</p></div>
+            <div class="w-card"><img src="assets/icons/why/flexible-settlement.svg" alt="" class="w-icon"><h4>Flexible Settlement</h4><p>Off-chain, on-chain or hybrid mode &ndash; choose based on your regulatory requirements.</p></div>
             <div class="w-card"><img src="assets/icons/why/sub-second-matching.svg" alt="" class="w-icon"><h4>Sub-Second Matching</h4><p>Dedicated high-performance engine delivers nanosecond-precision RFQ matching at institutional scale.</p></div>
-            <div class="w-card"><img src="assets/icons/why/customizable-workspaces.svg" alt="" class="w-icon"><h4>Customizable Workspaces</h4><p>Each user saves their own layouts, columns, and filters. Export/import as JSON.</p></div>
+            <div class="w-card"><img src="assets/icons/why/customizable-workspaces.svg" alt="" class="w-icon"><h4>Customisable Workspaces</h4><p>Each user saves their own layouts, columns and filters. Export/import as JSON.</p></div>
             <div class="w-card"><img src="assets/icons/why/full-audit-trail.svg" alt="" class="w-icon"><h4>Full Audit Trail</h4><p>Every operation recorded immutably. Complete before/after snapshots for all state changes.</p></div>
-            <div class="w-card"><img src="assets/icons/why/open-standards.svg" alt="" class="w-icon"><h4>Open Standards</h4><p>OpenAPI 3.1 spec, FIX protocol reporting, Ethereum/Besu for DLT &mdash; no vendor lock-in.</p></div>
-            <div class="w-card w-card-wide"><img src="assets/icons/why/production-ready.svg" alt="" class="w-icon"><h4>Production-Ready</h4><p>Kubernetes, Prometheus, Grafana, centralized logging, and CI/CD pipelines out of the box.</p></div>
+            <div class="w-card"><img src="assets/icons/why/production-ready.svg" alt="" class="w-icon"><h4>Production-Ready</h4><p>Kubernetes, Prometheus, Grafana, centralised logging and CI/CD pipelines out of the box.</p></div>
         </div>
     </div>
 </section>
@@ -235,16 +285,6 @@
     </div>
 </section>
 
-<!-- TECHNOLOGY / ARCHITECTURE -->
-<section class="tech" id="tech">
-    <div class="container">
-        <p class="eyebrow">TECHNOLOGY</p>
-        <h2 class="section-title">Architecture</h2>
-
-        <img src="assets/images/Architecture.jpg" alt="Murabex Architecture" class="arch-image">
-    </div>
-</section>
-
 <!-- READY TO TRANSFORM (CTA) -->
 <section class="cta-section" id="contact">
     <div class="container">
@@ -256,7 +296,7 @@
                 <div class="cta-step">
                     <div class="cta-step-num">1</div>
                     <h4>Request a Demo</h4>
-                    <p>See the full platform in action with real Murabaha workflows.</p>
+                    <p>See the full platform in action with real Islamic finance workflows.</p>
                 </div>
                 <div class="cta-step">
                     <div class="cta-step-num">2</div>
@@ -270,7 +310,7 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="#contact" class="btn-gold open-contact">Contact Us</a>
+                <a href="#contact" class="btn-gold open-contact">Contact us</a>
             </div>
         </div>
     </div>
