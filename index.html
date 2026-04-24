@@ -152,9 +152,10 @@
         <div class="lifecycle-scroll">
             <svg id="lifecycle-svg" viewBox="0 0 1150 380" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
                 <defs>
-                    <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#c9a84c" stroke-width="1.2"/></marker>
-                    <marker id="arrow-active" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#e4ca7a" stroke-width="1.5"/></marker>
-                    <marker id="arrow-dim" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="none" stroke="#3d3828" stroke-width="1.2"/></marker>
+                    <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c9a84c" stroke="none"/></marker>
+                    <marker id="arrow-active" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e4ca7a" stroke="none"/></marker>
+                    <marker id="arrow-dim" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#3d3828" stroke="none"/></marker>
+                    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#4A7BFF" stroke="none"/></marker>
                     <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.7" fill="rgba(201,168,76,0.04)"/></pattern>
                     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feFlood flood-color="#c9a84c" flood-opacity="0.35" result="c"/><feComposite in="c" in2="b" operator="in" result="s"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     <radialGradient id="pg"><stop offset="0%" stop-color="#e4ca7a"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></radialGradient>

@@ -58,20 +58,20 @@
         var glow = g.querySelector('.node-glow');
 
         if (isCurrent) {
-            bg.setAttribute('fill', '#e4ca7a');
-            bg.setAttribute('stroke', '#c9a84c');
+            bg.setAttribute('fill', '#E1B047');
+            bg.setAttribute('stroke', '#E1B047');
             bg.setAttribute('stroke-width', '1');
             glow.setAttribute('opacity', '1');
             g.querySelectorAll('text').forEach(function (t) {
                 t.setAttribute('fill', t.classList.contains('node-desc') ? 'rgba(26,26,26,0.7)' : '#1a1a1a');
             });
         } else {
-            bg.setAttribute('fill', 'rgba(201,168,76,0.18)');
-            bg.setAttribute('stroke', 'rgba(201,168,76,0.5)');
+            bg.setAttribute('fill', '#1A2048');
+            bg.setAttribute('stroke', '#4A7BFF');
             bg.setAttribute('stroke-width', '1');
             glow.setAttribute('opacity', '0');
             g.querySelectorAll('text').forEach(function (t) {
-                t.setAttribute('fill', t.classList.contains('node-desc') ? '#8a8680' : '#e4ca7a');
+                t.setAttribute('fill', t.classList.contains('node-desc') ? '#C5CBE0' : '#FFFFFF');
             });
         }
     }
@@ -79,9 +79,9 @@
     function highlightEdge(index) {
         if (index < fwdEdges.length) {
             var e = fwdEdges[index];
-            e.setAttribute('stroke', '#c9a84c');
+            e.setAttribute('stroke', '#4A7BFF');
             e.setAttribute('stroke-width', '1.5');
-            e.setAttribute('marker-end', 'url(#arrow-gold)');
+            e.setAttribute('marker-end', 'url(#arrow-blue)');
         }
     }
 

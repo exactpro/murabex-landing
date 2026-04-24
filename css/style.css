@@ -705,13 +705,13 @@ nav {
 }
 
 .lc-legend-visited {
-    background: rgba(201, 168, 76, 0.18);
-    border-color: rgba(201, 168, 76, 0.5);
+    background: #1A2048;
+    border-color: #4A7BFF;
 }
 
 .lc-legend-current {
-    background: #e4ca7a;
-    border-color: #c9a84c;
+    background: #E1B047;
+    border-color: #E1B047;
 }
 
 .lc-legend-pending {
