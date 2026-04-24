@@ -31,20 +31,34 @@
     });
 })();
 
-/* Accordion — smooth open/close with data-open attribute */
+/* Accordion — smooth open/close, one item open at a time */
 (function () {
-    document.querySelectorAll('.accordion-item').forEach(function (item) {
+    const items = document.querySelectorAll('.accordion-item');
+    items.forEach(function (item) {
         const header = item.querySelector('.accordion-header');
         if (!header) return;
 
         header.addEventListener('click', function () {
             const isOpen = item.hasAttribute('data-open');
+
+            items.forEach(function (other) {
+                if (other !== item) {
+                    other.removeAttribute('data-open');
+                    const otherHeader = other.querySelector('.accordion-header');
+                    if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+                }
+            });
+
             if (isOpen) {
                 item.removeAttribute('data-open');
                 header.setAttribute('aria-expanded', 'false');
             } else {
                 item.setAttribute('data-open', '');
                 header.setAttribute('aria-expanded', 'true');
+                /* after transition, bring header into view at top (smooth) */
+                setTimeout(function () {
+                    header.scrollIntoView({ block: 'start', behavior: 'smooth' });
+                }, 420);
             }
         });
     });
