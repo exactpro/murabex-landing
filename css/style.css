@@ -1296,6 +1296,12 @@ body.modal-open { overflow: hidden; }
     letter-spacing: 0.3px;
 }
 
+/* Generic body text in form (descriptions, etc.) */
+#WbCvXl #form-fields-container .css-35gckq.css-35gckq,
+#WbCvXl .css-35gckq.css-35gckq {
+    color: var(--text-muted);
+}
+
 /* Generic label styles (fallback for other text classes) */
 #WbCvXl label {
     color: var(--text-muted) !important;
@@ -1508,7 +1514,44 @@ body.modal-open { overflow: hidden; }
     .footer-bottom { flex-direction: column; text-align: center; }
 }
 
+@media (max-width: 410px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .w-card-wide { grid-column: auto; }
+    .w-card h4, .w-card p { text-wrap: wrap; }
+
+    /* Who It's For: 1 column at very narrow widths */
+    .audience-grid { grid-template-columns: 1fr; }
+    .audience-card { border-right: none; border-bottom: 1px solid #2E313A; }
+    .audience-card:last-child { border-bottom: none; }
+
+    /* corners for 4-row single column */
+    .audience-card:nth-child(1) {
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        border-bottom-left-radius: 0;
+    }
+    .audience-card:nth-child(2) { border-top-right-radius: 0; }
+    .audience-card:nth-child(3) { border-bottom-left-radius: 0; }
+    .audience-card:nth-child(4) {
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+        border-top-right-radius: 0;
+    }
+}
+
 @media (max-width: 560px) {
     .hero-buttons { flex-direction: column; align-items: stretch; }
     .btn-gold, .btn-outline { width: 100%; }
+
+    /* features slider: 2 cards stacked vertically per page, with peek of next column */
+    .features-grid {
+        grid-template-rows: repeat(2, auto);
+        grid-auto-columns: 88%;
+    }
+
+    /* corners for 2×6 layout: only 1 (top-left), 2 (bottom-left), 11 (top-right), 12 (bottom-right) */
+    .f-card:first-child { border-bottom-left-radius: 0; }
+    .f-card:nth-child(2) { border-bottom-left-radius: calc(var(--r-lg) - 1px); }
+    .f-card:nth-child(11) { border-top-right-radius: calc(var(--r-lg) - 1px); }
+    .f-card:last-child { border-top-right-radius: 0; }
 }
