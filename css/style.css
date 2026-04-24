@@ -1017,7 +1017,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .cta-step h4 {
@@ -1389,12 +1389,12 @@ body.modal-open { overflow: hidden; }
     .cta-box { padding: 20px; }
     .cta-steps { grid-template-columns: 1fr; gap: 10px; }
 
-    /* CTA steps on mobile: number + title in one row, description on full-width row below */
+    /* CTA steps on mobile: number + title in row 1, description on its own full-width row */
     .cta-step {
         display: grid;
         grid-template-columns: auto 1fr;
-        column-gap: 32px;
-        row-gap: 12px;
+        column-gap: 16px;
+        row-gap: 8px;
         align-items: center;
     }
     .cta-step-num {
@@ -1402,6 +1402,9 @@ body.modal-open { overflow: hidden; }
         width: 34px;
         height: 34px;
         font-size: 15px;
+    }
+    .cta-step h4 {
+        margin-bottom: 0;
     }
     .cta-step p {
         grid-column: 1 / -1;
