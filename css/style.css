@@ -803,6 +803,9 @@ nav {
     margin: 0 auto var(--s-5);
 }
 
+.why-slider { position: relative; }
+.why-slider-next { display: none; }
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1393,8 +1396,8 @@ body.modal-open { overflow: hidden; }
     .cta-step {
         display: grid;
         grid-template-columns: auto 1fr;
-        column-gap: 16px;
-        row-gap: 8px;
+        column-gap: 12px;
+        row-gap: 12px;
         align-items: center;
     }
     .cta-step-num {
@@ -1566,4 +1569,53 @@ body.modal-open { overflow: hidden; }
     .f-card:nth-child(2) { border-bottom-left-radius: calc(var(--r-lg) - 1px); }
     .f-card:nth-child(11) { border-top-right-radius: calc(var(--r-lg) - 1px); }
     .f-card:last-child { border-top-right-radius: 0; }
+
+    /* why → horizontal carousel, peek of next card hints at more content */
+    .why-grid {
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: min(88%, 320px);
+        gap: 12px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .why-grid::-webkit-scrollbar { display: none; }
+    .w-card {
+        scroll-snap-align: start;
+        min-width: 0;
+        transition: none;
+    }
+    .w-card:hover,
+    .w-card:active {
+        transform: none;
+        box-shadow: none;
+    }
+    .w-card-wide { grid-column: auto; }
+
+    .why-slider-next {
+        display: flex;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(13, 13, 13, 0.85);
+        border: none;
+        color: var(--gold-light);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .why-slider-next svg { width: 16px; height: 16px; display: block; }
+    .why-slider-next:active { background: rgba(13, 13, 13, 0.95); }
 }
