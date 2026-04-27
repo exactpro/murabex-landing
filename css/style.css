@@ -1221,9 +1221,9 @@ body.modal-open { overflow: hidden; }
     position: relative;
 }
 
-/* Row wrapper between fields */
-#nutshell-form-1CAaDV .css-1ub0j67 {
-    padding: 10px 0;
+/* Tighten the gap between rows (Nutshell default is too large) */
+#nutshell-form-1CAaDV .css-29pv05.css-29pv05 > :not(:last-child):not(.hidden-field) {
+    margin-bottom: 1em !important;
 }
 
 /* Labels visually hidden (placeholder serves as visible name).
@@ -1233,12 +1233,58 @@ body.modal-open { overflow: hidden; }
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
     overflow: hidden !important;
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+}
+
+/* Exception: anything inside <fieldset> stays visible.
+   Marketing Permissions section uses fieldset > legend (section heading)
+   + label (wraps the checkbox + agreement text). Plain text-input labels
+   are NOT inside a fieldset, so they remain hidden. */
+#nutshell-form-1CAaDV fieldset legend,
+#nutshell-form-1CAaDV fieldset .css-bh3upc,
+#nutshell-form-1CAaDV fieldset label {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+}
+
+#nutshell-form-1CAaDV fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nutshell-form-1CAaDV fieldset legend {
+    color: var(--text-muted) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    padding-bottom: 4px !important;
+}
+
+/* Checkbox row label */
+#nutshell-form-1CAaDV fieldset label {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--text) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.4;
+}
+
+#nutshell-form-1CAaDV fieldset label input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 /* Input / textarea — underline style on dark.
