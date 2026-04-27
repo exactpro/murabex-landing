@@ -410,6 +410,14 @@ nav {
     z-index: 2;
 }
 
+.hero-tagline {
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: var(--s-3);
+}
+
 .hero h1 {
     font-size: clamp(40px, 6.5vw, 80px);
     font-weight: 800;
