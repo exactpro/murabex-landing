@@ -1,4 +1,71 @@
 (function () {
+    /* === STATIC MODE ===
+       Animation removed by request. The full original cycling animation
+       (sequential node highlighting + particle travel between nodes) is
+       preserved as a commented block at the bottom of this file. To restore:
+       replace the body of this IIFE with the code in that block. */
+
+    const VISITED = [0, 1];          // Draft, Review
+    const CURRENT = 2;                // Approved
+    const VISITED_EDGES = [0, 1];    // Draft→Review, Review→Approved
+
+    const statusLabels = [
+        'Draft', 'Review', 'Approved', 'Execute', 'Liquidity Found',
+        'Acquisition', 'Acquired', 'Hold', 'Transfer', 'Complete', 'Done'
+    ];
+
+    const svg = document.getElementById('lifecycle-svg');
+    if (!svg) return;
+
+    const nodes = svg.querySelectorAll('.lc-node');
+    const fwdEdges = svg.querySelectorAll('.fwd-edge');
+    const statusEl = document.querySelector('.lc-status-value');
+
+    function setNodeVisited(index) {
+        const g = nodes[index];
+        if (!g) return;
+        const bg = g.querySelector('.node-bg');
+        const glow = g.querySelector('.node-glow');
+        bg.setAttribute('fill', '#1A2048');
+        bg.setAttribute('stroke', '#4A7BFF');
+        bg.setAttribute('stroke-width', '1');
+        glow.setAttribute('opacity', '0');
+        g.querySelectorAll('text').forEach(function (t) {
+            t.setAttribute('fill', t.classList.contains('node-desc') ? '#C5CBE0' : '#FFFFFF');
+        });
+    }
+
+    function setNodeCurrent(index) {
+        const g = nodes[index];
+        if (!g) return;
+        const bg = g.querySelector('.node-bg');
+        const glow = g.querySelector('.node-glow');
+        bg.setAttribute('fill', '#E1B047');
+        bg.setAttribute('stroke', '#E1B047');
+        bg.setAttribute('stroke-width', '1');
+        glow.setAttribute('opacity', '1');
+        g.querySelectorAll('text').forEach(function (t) {
+            t.setAttribute('fill', t.classList.contains('node-desc') ? 'rgba(26,26,26,0.7)' : '#1a1a1a');
+        });
+    }
+
+    function highlightEdge(index) {
+        const e = fwdEdges[index];
+        if (!e) return;
+        e.setAttribute('stroke', '#4A7BFF');
+        e.setAttribute('stroke-width', '1.5');
+        e.setAttribute('marker-end', 'url(#arrow-blue)');
+    }
+
+    VISITED.forEach(setNodeVisited);
+    setNodeCurrent(CURRENT);
+    VISITED_EDGES.forEach(highlightEdge);
+    if (statusEl) statusEl.textContent = statusLabels[CURRENT];
+
+    /* === ORIGINAL ANIMATED VERSION (preserved for future restoration) ===
+       To bring the animation back: delete everything above inside this IIFE
+       and uncomment the block below.
+
     const centers = [
         { x: 120, y: 135 }, { x: 300, y: 135 }, { x: 480, y: 135 },
         { x: 660, y: 135 }, { x: 840, y: 135 }, { x: 1020, y: 135 },
@@ -150,4 +217,6 @@
             }
         });
     }, { threshold: 0.3 }).observe(document.getElementById('lifecycle'));
+
+    === END OF ORIGINAL ANIMATED VERSION === */
 })();
