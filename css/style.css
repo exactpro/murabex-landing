@@ -1519,7 +1519,7 @@ body.modal-open { overflow: hidden; }
         right: 0;
         left: 0;
         top: auto;
-        bottom: 0;
+        bottom: -5px;
         object-fit: cover;
         object-position: center top;
         -webkit-mask-image: linear-gradient(to top, black 55%, transparent);
