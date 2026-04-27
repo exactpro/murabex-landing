@@ -1201,137 +1201,166 @@ body.modal-open { overflow: hidden; }
     margin-bottom: var(--s-3);
 }
 
-#nutshell-form-WbCvXl {
+#nutshell-form-1CAaDV {
     min-height: 280px;
 }
 
-/* Nutshell form (Emotion-hashed classes — Murabex dark/gold theme) */
-#WbCvXl,
-#WbCvXl * {
+/* Nutshell form (Emotion-hashed classes — Murabex dark/gold theme).
+   All selectors anchor on the wrapper div #nutshell-form-1CAaDV (we control
+   it in HTML) so they survive Nutshell's internal DOM changes. */
+#nutshell-form-1CAaDV,
+#nutshell-form-1CAaDV * {
     font-family: 'Inter', sans-serif !important;
     box-sizing: border-box;
 }
 
-/* Form outer wrapper — dark background to match modal */
+/* Outer wrapper Nutshell injects (if any) — dark background */
 .css-8p2yze.css-8p2yze {
     background-color: var(--bg-lifted) !important;
     min-height: 100%;
     position: relative;
 }
 
-/* Input / textarea / select — underline style */
-#WbCvXl #form-fields-container .css-s998u6.css-s998u6,
-#WbCvXl .css-s998u6.css-s998u6 {
-    border-radius: 0;
-    color: var(--text);
-    font-size: 15px;
-    width: 100%;
+/* Row wrapper between fields */
+#nutshell-form-1CAaDV .css-1ub0j67 {
     padding: 10px 0;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #2E313A;
+}
+
+/* Labels visually hidden (placeholder serves as visible name).
+   Kept in DOM so screen readers still announce field names on focus. */
+#nutshell-form-1CAaDV label,
+#nutshell-form-1CAaDV .css-bh3upc {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Input / textarea — underline style on dark.
+   !important needed because Nutshell's defaults set border + bg with
+   high specificity (form #form-fields-container .css-s998u6.css-s998u6). */
+#nutshell-form-1CAaDV #form-fields-container .css-s998u6.css-s998u6,
+#nutshell-form-1CAaDV .css-s998u6.css-s998u6 {
+    background: transparent !important;
+    color: var(--text) !important;
+    font-size: 15px !important;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    border: none !important;
+    border-bottom: 1px solid #2E313A !important;
+    border-radius: 0 !important;
     transition: border-color .2s ease;
 }
 
-#WbCvXl #form-fields-container .css-s998u6.css-s998u6::placeholder,
-#WbCvXl .css-s998u6.css-s998u6::placeholder {
+#nutshell-form-1CAaDV #form-fields-container .css-s998u6.css-s998u6::placeholder,
+#nutshell-form-1CAaDV .css-s998u6.css-s998u6::placeholder {
     color: var(--text-muted);
-    opacity: 0.5;
-}
-
-/* Legend visibility fix (from user's working config) */
-#WbCvXl #form-fields-container fieldset legend.css-bh3upc {
-    display: block !important;
-    color: var(--text-muted);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    margin-bottom: 4px;
-}
-
-#WbCvXl #form-fields-container .css-bh3upc.css-bh3upc,
-#WbCvXl .css-bh3upc.css-bh3upc {
-    display: none;
-}
-
-/* Row / field-wrapper padding */
-#WbCvXl #form-fields-container .css-15dpn4a.css-15dpn4a,
-#WbCvXl .css-15dpn4a.css-15dpn4a {
-    padding: 12px 0;
+    opacity: 0.4;
 }
 
 /* Focus state */
-#WbCvXl .css-29pv05.css-29pv05 input[type]:focus,
-#WbCvXl .css-29pv05.css-29pv05 textarea:focus {
-    outline: none;
-    outline-offset: -2px;
-    border-bottom: 1px solid var(--gold) !important;
+#nutshell-form-1CAaDV input:focus,
+#nutshell-form-1CAaDV textarea:focus {
+    outline: none !important;
+    border-bottom-color: var(--gold) !important;
 }
 
-/* Form heading (centered, gold) */
-#WbCvXl #form-fields-container .css-15evt26.css-15evt26,
-#WbCvXl .css-15evt26.css-15evt26 {
-    font-size: 22px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--gold);
-    margin-top: 20px;
-    letter-spacing: 0.3px;
-}
-
-/* Generic body text in form (descriptions, etc.) */
-#WbCvXl #form-fields-container .css-35gckq.css-35gckq,
-#WbCvXl .css-35gckq.css-35gckq {
-    color: var(--text-muted);
-}
-
-/* Generic label styles (fallback for other text classes) */
-#WbCvXl label {
+/* Privacy / disclaimer paragraphs */
+#nutshell-form-1CAaDV .css-35gckq {
     color: var(--text-muted) !important;
     font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    line-height: 1.5;
 }
 
-/* Submit button — gold gradient */
-#WbCvXl button[type="submit"],
-#WbCvXl input[type="submit"],
-#WbCvXl button:not([type="button"]) {
+/* React-Select (Marketing Permissions dropdown) */
+#nutshell-form-1CAaDV .css-b62m3t-container {
+    width: 100%;
+}
+#nutshell-form-1CAaDV .css-10soyvq-control {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #2E313A !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 40px;
+    padding: 4px 0;
+}
+#nutshell-form-1CAaDV .css-10soyvq-control:hover {
+    border-bottom-color: var(--gold) !important;
+}
+#nutshell-form-1CAaDV .css-508jeu-placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.5;
+    font-size: 15px;
+}
+#nutshell-form-1CAaDV .css-1u9des2-indicatorSeparator {
+    display: none;
+}
+#nutshell-form-1CAaDV .css-8mmkcg {
+    fill: var(--gold);
+}
+/* Dropdown menu (open state) */
+#nutshell-form-1CAaDV [class*="menu"] {
+    background: var(--bg-lifted) !important;
+    border: 1px solid #2E313A !important;
+}
+#nutshell-form-1CAaDV [class*="option"] {
+    color: var(--text) !important;
+    background: transparent !important;
+}
+#nutshell-form-1CAaDV [class*="option"]:hover {
+    background: rgba(201,168,76,0.08) !important;
+    color: var(--gold-light) !important;
+}
+
+/* Submit button — gold gradient, supports both <input type="submit"> and <button> */
+#nutshell-form-1CAaDV input[type="submit"],
+#nutshell-form-1CAaDV .css-o1h3go,
+#nutshell-form-1CAaDV button[type="submit"],
+#nutshell-form-1CAaDV button:not([type="button"]) {
     background: var(--gradient-gold-radial) !important;
     color: #1A1A1A !important;
     border: none !important;
     border-radius: 14px !important;
-    padding: 18px 40px !important;
+    padding: 14px 36px !important;
     font-weight: 700 !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
     cursor: pointer !important;
     box-shadow: 0 4px 14px rgba(225, 176, 71, 0.2) !important;
     transition: transform .2s ease, box-shadow .2s ease !important;
+    width: auto !important;
 }
 
-#WbCvXl button[type="submit"]:hover,
-#WbCvXl input[type="submit"]:hover {
+#nutshell-form-1CAaDV input[type="submit"]:hover,
+#nutshell-form-1CAaDV .css-o1h3go:hover,
+#nutshell-form-1CAaDV button[type="submit"]:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow-gold) !important;
 }
 
 /* Checkbox / radio — gold accent */
-#WbCvXl input[type="checkbox"],
-#WbCvXl input[type="radio"] {
+#nutshell-form-1CAaDV input[type="checkbox"],
+#nutshell-form-1CAaDV input[type="radio"] {
     accent-color: var(--gold);
 }
 
 /* Links inside form */
-#WbCvXl a {
+#nutshell-form-1CAaDV a {
     color: var(--gold-light);
 }
-
-#WbCvXl a:hover {
+#nutshell-form-1CAaDV a:hover {
     color: var(--gold);
 }
 
-/* Success message */
-#WbCvXl-success-message {
+/* Success message — Nutshell may emit either id, cover both */
+#nutshell-form-1CAaDV-success-message,
+#1CAaDV-success-message,
+#nutshell-form-1CAaDV [class*="success"] {
     color: var(--gold);
     text-align: center;
     padding: 20px 0;
@@ -1339,9 +1368,9 @@ body.modal-open { overflow: hidden; }
     line-height: 1.6;
 }
 
-/* Error / validation messages (guess common pattern) */
-#WbCvXl [class*="error"],
-#WbCvXl [role="alert"] {
+/* Error / validation messages */
+#nutshell-form-1CAaDV [class*="error"],
+#nutshell-form-1CAaDV [role="alert"] {
     color: #FF7070;
     font-size: 13px;
     margin-top: 4px;

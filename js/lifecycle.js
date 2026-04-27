@@ -5,9 +5,9 @@
        preserved as a commented block at the bottom of this file. To restore:
        replace the body of this IIFE with the code in that block. */
 
-    const VISITED = [0, 1];          // Draft, Review
-    const CURRENT = 2;                // Approved
-    const VISITED_EDGES = [0, 1];    // Draft→Review, Review→Approved
+    const VISITED = [0, 1, 2, 3, 4, 5, 6, 7, 8];   // Draft … Transfer
+    const CURRENT = 9;                              // Complete
+    const VISITED_EDGES = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // every edge into a visited/current node
 
     const statusLabels = [
         'Draft', 'Review', 'Approved', 'Execute', 'Liquidity Found',
