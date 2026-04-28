@@ -746,23 +746,19 @@ nav {
 .arch-box[data-tier="ledger"]    { fill: rgba(93, 198, 232, 0.70);  stroke: #5dc6e8; }
 .arch-box[data-tier="exchange"]  { fill: rgba(163, 133, 255, 0.70); stroke: #a385ff; }
 
-/* Node text — white labels on saturated colored fills */
-.arch-label {
+/* Node text — both lines styled identically (label and sublabel are
+   equally weighted in the diagram). White on most tiles, dark on Murabex
+   (gold) tiles for contrast. */
+.arch-label,
+.arch-sublabel {
     font-size: 14px;
     font-weight: 700;
     fill: #ffffff;
     text-anchor: middle;
 }
-/* Dark text on Murabex (gold) fills for contrast */
-.arch-label-gold { fill: #1a1a1a; }
-.arch-sublabel {
-    font-size: 11px;
-    font-weight: 400;
-    fill: rgba(255, 255, 255, 0.85);
-    text-anchor: middle;
-}
+.arch-label-gold,
 .arch-node[data-node^="murabex"] .arch-sublabel {
-    fill: rgba(26, 26, 26, 0.75);
+    fill: #1a1a1a;
 }
 
 /* Per-flow dimming: when a specific tab is active, fade out anything
