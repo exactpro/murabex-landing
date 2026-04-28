@@ -9,17 +9,11 @@
     const CURRENT = 9;                              // Complete
     const VISITED_EDGES = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // every edge into a visited/current node
 
-    const statusLabels = [
-        'Draft', 'Review', 'Approved', 'Execute', 'Liquidity Found',
-        'Acquisition', 'Acquired', 'Hold', 'Transfer', 'Complete', 'Done'
-    ];
-
     const svg = document.getElementById('lifecycle-svg');
     if (!svg) return;
 
     const nodes = svg.querySelectorAll('.lc-node');
     const fwdEdges = svg.querySelectorAll('.fwd-edge');
-    const statusEl = document.querySelector('.lc-status-value');
 
     function setNodeVisited(index) {
         const g = nodes[index];
@@ -60,7 +54,6 @@
     VISITED.forEach(setNodeVisited);
     setNodeCurrent(CURRENT);
     VISITED_EDGES.forEach(highlightEdge);
-    if (statusEl) statusEl.textContent = statusLabels[CURRENT];
 
     /* === ORIGINAL ANIMATED VERSION (preserved for future restoration) ===
        To bring the animation back: delete everything above inside this IIFE

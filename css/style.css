@@ -2,6 +2,7 @@
    DESIGN TOKENS (from Figma Platform24)
    ========================================================= */
 :root {
+    color-scheme: dark;
     --bg: #0D0D0D;
     --bg-lifted: #1B1D22;
     --bg-medium: #282A31;
@@ -61,7 +62,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 32px;
@@ -195,6 +196,20 @@ section {
     background: #363944;
 }
 
+/* Gold-bordered outline — secondary accent variant */
+.btn-outline-gold {
+    background: transparent;
+    color: var(--gold-light);
+    border-color: var(--gold);
+}
+
+.btn-outline-gold:hover {
+    background: rgba(201, 168, 76, 0.08);
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-1px);
+}
+
 /* =========================================================
    NAV (HEADER)
    ========================================================= */
@@ -253,6 +268,38 @@ nav {
 
 .nav-links a.active {
     color: var(--gold);
+}
+
+/* Language switcher (EN / AR) */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--r-sm);
+    padding: 3px;
+    flex-shrink: 0;
+}
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 5px 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background .15s ease, color .15s ease;
+}
+.lang-btn:hover {
+    color: var(--text);
+}
+.lang-btn.is-active {
+    background: rgba(212, 165, 58, 0.15);
+    color: var(--gold-light);
 }
 
 .nav-cta {
@@ -864,17 +911,6 @@ nav {
 
 .lifecycle-scroll::-webkit-scrollbar-thumb:hover {
     background: var(--gold);
-}
-
-.lifecycle-status {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin: calc(-1 * var(--s-4)) 0 var(--s-3);
-}
-
-.lc-status-value {
-    color: var(--gold-light);
-    font-weight: 700;
 }
 
 .lifecycle-legend {
@@ -1672,7 +1708,12 @@ body.modal-open { overflow: hidden; }
     }
     .nav-links { display: none; }
     .nav-cta { display: none; }
+    .lang-switch:not(.lang-switch--mobile) { display: none; }
     .nav-toggle { display: flex; }
+    .lang-switch--mobile {
+        margin-top: var(--s-3);
+        align-self: flex-start;
+    }
 
     .about-box { background: transparent; border: none; padding: 0; margin: 0; }
 
@@ -1906,3 +1947,89 @@ body.modal-open { overflow: hidden; }
     .why-slider-next svg { width: 16px; height: 16px; display: block; }
     .why-slider-next:active { background: rgba(13, 13, 13, 0.95); }
 }
+
+/* =========================================================
+   RTL OVERRIDES (Arabic version)
+   ========================================================= */
+[dir="rtl"] body,
+[dir="rtl"] {
+    font-family: 'IBM Plex Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Keep architecture and lifecycle diagrams flowing left-to-right
+   even in RTL layout — the arrows and pipeline stages read naturally
+   that way regardless of language. */
+[dir="rtl"] .arch-diagram,
+[dir="rtl"] .arch-svg-scroll,
+[dir="rtl"] .lifecycle-scroll,
+[dir="rtl"] #lifecycle-svg {
+    direction: ltr;
+}
+
+/* Section title underline anchors to the start edge in both directions
+   (it relies on margin-top + width:80px, which works in RTL by default). */
+
+/* Audience grid: borders sit on the inline-end side, not always physical right. */
+[dir="rtl"] .audience-card {
+    border-right: none;
+    border-left: 1px solid #2E313A;
+}
+[dir="rtl"] .audience-card:last-child {
+    border-left: none;
+}
+
+/* Modal close button: pin to the inline-end (logical right). */
+[dir="rtl"] .modal-close {
+    right: auto;
+    left: 16px;
+}
+
+/* Hero CTA arrow: flip the chevron so it points toward the inline-end. */
+[dir="rtl"] .btn-gold.with-arrow::after,
+[dir="rtl"] .with-arrow::after {
+    transform: scaleX(-1);
+}
+
+/* Why-slider next arrow: points to the inline-end. */
+[dir="rtl"] .why-slider-next svg {
+    transform: scaleX(-1);
+}
+
+/* Accordion chevron: keep its expand/collapse motion intuitive. */
+[dir="rtl"] .accordion-icon {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Mobile-menu numbering: numbers should sit before the label in reading order. */
+[dir="rtl"] .mobile-menu-num {
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+@keyframes menu-slide-rtl {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+    /* Mobile drawer slides in from the inline-end (visual left in RTL). */
+    [dir="rtl"] .mobile-menu-panel {
+        right: auto;
+        left: 0;
+        border-left: none;
+        border-right: 1px solid var(--color-white-6);
+        animation-name: menu-slide-rtl;
+    }
+    [dir="rtl"] .mobile-menu-close {
+        right: auto;
+        left: 20px;
+    }
+    [dir="rtl"] .audience-card:nth-child(even) {
+        border-left: none;
+    }
+    [dir="rtl"] .audience-card {
+        border-right: none;
+    }
+}
+

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
     <title>Murabex — Digital Asset Exchange</title>
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,8 +26,13 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#why">Why Murabex</a></li>
             <li><a href="#who">Who It's For</a></li>
+            <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        </div>
         <a href="#contact" class="btn-gold nav-cta open-contact">Request a demo</a>
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span><span></span><span></span>
@@ -44,8 +51,13 @@
             <li><a href="#features" data-menu-close><span class="mobile-menu-num">03</span>Features</a></li>
             <li><a href="#why" data-menu-close><span class="mobile-menu-num">04</span>Why Murabex</a></li>
             <li><a href="#who" data-menu-close><span class="mobile-menu-num">05</span>Who it's for</a></li>
-            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">06</span>Contact</a></li>
+            <li><a href="#team" data-menu-close><span class="mobile-menu-num">06</span>Team</a></li>
+            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">07</span>Contact</a></li>
         </ul>
+        <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language">
+            <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        </div>
     </div>
 </div>
 
@@ -58,7 +70,8 @@
         <p class="hero-sub">Powering shared digital asset ecosystems where customer facilitation and liquidity provision work in tandem to drive growth.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn-gold with-arrow open-contact">Request a demo</a>
-            <a href="#features" class="btn-outline">Explore Features</a>
+            <a href="#features" class="btn-outline btn-outline-gold">Explore Features</a>
+            <a href="#contact" class="btn-outline">Build a Sovereign Ecosystem</a>
         </div>
     </div>
 </section>
@@ -71,6 +84,7 @@
             <h2 class="section-title">Shari’ah-compliant, Community-driven, Reliable and Efficient</h2>
             <div class="about-text">
                 <p>Murabex is an enterprise-grade digital exchange platform that enables financial institutions to streamline the execution of Murabaha agreements for their customers. As part of a community-driven collaborative service, it brings together prominent exchange and clearing members who not only serve their own customers but also provide liquidity to other participants. The result is a shared ecosystem where customer facilitation and liquidity provision mutually reinforce each other.</p>
+                <p>By enabling institutions to direct capital from international markets back to the UAE, Murabex reduces value leakage from the local economy and strengthens domestic financial flows. In turn, deeper liquidity in the UAE securities market stimulates efficiency and enhances the attractiveness of the market to international investors.</p>
             </div>
 
             <div class="accordion">
@@ -104,17 +118,17 @@
                                     <!-- Section header chevrons -->
                                     <g class="arch-section">
                                         <path class="arch-chevron" d="M40,30 L420,30 L450,60 L420,90 L40,90 Z"/>
-                                        <text class="arch-chevron-title" x="220" y="56">Pre-trade</text>
-                                        <text class="arch-chevron-subtitle" x="220" y="76">(OMS)</text>
+                                        <text class="arch-chevron-title" x="230" y="56">Pre-trade</text>
+                                        <text class="arch-chevron-subtitle" x="230" y="76">(OMS)</text>
                                     </g>
                                     <g class="arch-section">
                                         <path class="arch-chevron" d="M450,30 L820,30 L850,60 L820,90 L450,90 L480,60 Z"/>
-                                        <text class="arch-chevron-title" x="640" y="56">Trading</text>
-                                        <text class="arch-chevron-subtitle" x="640" y="76">(EMS)</text>
+                                        <text class="arch-chevron-title" x="650" y="56">Trading</text>
+                                        <text class="arch-chevron-subtitle" x="650" y="76">(EMS)</text>
                                     </g>
                                     <g class="arch-section">
-                                        <path class="arch-chevron" d="M850,30 L1200,30 L1200,90 L850,90 L880,60 Z"/>
-                                        <text class="arch-chevron-title" x="1025" y="56">Post-trade</text>
+                                        <path class="arch-chevron" d="M850,30 L1170,30 L1200,60 L1170,90 L850,90 L880,60 Z"/>
+                                        <text class="arch-chevron-title" x="1025" y="65">Post-trade</text>
                                     </g>
 
                                     <!-- Vertical dashed separators between sections -->
@@ -295,7 +309,6 @@
         <p class="eyebrow">Workflow</p>
         <h2 class="section-title">Agreement Lifecycle</h2>
         <p class="section-sub">A Murabaha agreement progresses through controlled states &ndash; with backward paths for re-review and repeated acquisition cycles. Each transition is governed by role-based permissions and recorded in an immutable audit log.</p>
-        <p class="lifecycle-status">Current status: <span class="lc-status-value">Draft</span></p>
 
         <div class="lifecycle-scroll">
             <svg id="lifecycle-svg" viewBox="0 0 1150 380" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; min-width: 700px;">
@@ -394,12 +407,12 @@
         <p class="why-sub">Purpose-built for Islamic finance, not retrofitted from conventional trading systems.</p>
         <div class="why-slider">
         <div class="why-grid">
-            <div class="w-card"><img src="assets/icons/why/sharia-compliant.svg" alt="" class="w-icon"><h4>Shari’ah-compliant by Design</h4><p>Architecture built from the ground up for Islamic finance workflows and approval processes.</p></div>
-            <div class="w-card"><img src="assets/icons/why/flexible-settlement.svg" alt="" class="w-icon"><h4>Flexible Settlement</h4><p>Off-chain, on-chain or hybrid mode &ndash; choose based on your regulatory requirements.</p></div>
-            <div class="w-card"><img src="assets/icons/why/sub-second-matching.svg" alt="" class="w-icon"><h4>Sub-second Matching</h4><p>Dedicated high-performance engine delivers nanosecond-precision RFQ matching at institutional scale.</p></div>
-            <div class="w-card"><img src="assets/icons/why/customizable-workspaces.svg" alt="" class="w-icon"><h4>Customisable Workspaces</h4><p>Each user saves their own layouts, columns and filters. Export/import as JSON.</p></div>
+            <div class="w-card"><img src="assets/icons/why/sharia-compliant.svg" alt="" class="w-icon"><h4>Governed by approvals</h4><p>Scoped, versioned and enforced Shari&rsquo;ah compliance.</p></div>
+            <div class="w-card"><img src="assets/icons/why/customizable-workspaces.svg" alt="" class="w-icon"><h4>Powered by market liquidity</h4><p>Competitive providers enable price discovery and stability.</p></div>
+            <div class="w-card"><img src="assets/icons/why/production-ready.svg" alt="" class="w-icon"><h4>Driven by real ownership</h4><p>Risk is genuine, transferred strictly and not engineered away.</p></div>
+            <div class="w-card"><img src="assets/icons/why/customer-control.svg" alt="" class="w-icon"><h4>Controlled by the customer</h4><p>Ownership decisions remain fully with the customer, with no obligation to exit, no implicit dependency and all delegated actions explicitly defined and auditable.</p></div>
+            <div class="w-card"><img src="assets/icons/why/transparent-design.svg" alt="" class="w-icon"><h4>Transparent by design</h4><p>All fees and economics are visible upfront and consistently applied.</p></div>
             <div class="w-card"><img src="assets/icons/why/full-audit-trail.svg" alt="" class="w-icon"><h4>Full Audit Trail</h4><p>Every operation recorded immutably. Complete before/after snapshots for all state changes.</p></div>
-            <div class="w-card"><img src="assets/icons/why/production-ready.svg" alt="" class="w-icon"><h4>Production-ready</h4><p>Kubernetes, Prometheus, Grafana, centralised logging and CI/CD pipelines out of the box.</p></div>
         </div>
         <button type="button" class="why-slider-next" aria-label="Next slide">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -415,24 +428,24 @@
         <div class="audience-box">
             <div class="audience-grid">
                 <div class="audience-card">
-                    <img src="assets/icons/audience/banks.svg" alt="" class="audience-icon">
-                    <h4>Banks</h4>
-                    <p>Manage customers, issue requests for quotes (RFQs), oversee Murabaha agreements and control settlement workflows.</p>
+                    <img src="assets/icons/audience/banks-customers.svg" alt="" class="audience-icon">
+                    <h4>Originating Banks &amp; Customers</h4>
+                    <p>Banks execute Murabaha trades by acquiring and owning the asset, then selling it to customers at disclosed cost-plus terms. Customers receive the asset and repay on a deferred schedule.</p>
                 </div>
                 <div class="audience-card">
                     <img src="assets/icons/audience/liquidity.svg" alt="" class="audience-icon">
                     <h4>Liquidity Providers</h4>
-                    <p>Respond to RFQs, compete on pricing and monitor effectiveness scores with real-time feedback.</p>
+                    <p>Liquidity providers &ndash; Daily Traders/Banks and Corporate Treasuries &ndash; provide on-chain settlement liquidity used for cash legs of each Murabaha trade.</p>
                 </div>
                 <div class="audience-card">
-                    <img src="assets/icons/audience/assets.svg" alt="" class="audience-icon">
-                    <h4>Asset Issuers</h4>
-                    <p>Issue and manage tokenized assets through on-chain and off-chain ledger operations.</p>
+                    <img src="assets/icons/audience/national-exchange.svg" alt="" class="audience-icon">
+                    <h4>National Exchange</h4>
+                    <p>The national exchange hosts the trading venue. It provides listing, matching and settlement records as negotiated trades via exchange.</p>
                 </div>
                 <div class="audience-card">
                     <img src="assets/icons/audience/regulators.svg" alt="" class="audience-icon">
                     <h4>Regulators</h4>
-                    <p>Full immutable audit trail, transactions reporting with nanosecond timestamps, FIX reporting and conformance tools.</p>
+                    <p>Supervisory role &ndash; Shari&rsquo;ah board and financial regulator, depending on jurisdiction. Observer access to the ledger for continuous structural oversight.</p>
                 </div>
             </div>
         </div>
@@ -454,13 +467,13 @@
                 </div>
                 <div class="cta-step">
                     <div class="cta-step-num">2</div>
-                    <h4>Pilot Project</h4>
-                    <p>Deploy in your infrastructure and onboard your participants.</p>
+                    <h4>Build a Community &amp; Run a Pilot</h4>
+                    <p>Gather institutional participants motivated to reduce value leakage from the domestic securities market.</p>
                 </div>
                 <div class="cta-step">
                     <div class="cta-step-num">3</div>
-                    <h4>Go Live</h4>
-                    <p>Full integration with your systems and blockchain network.</p>
+                    <h4>Operate a Sovereign Ecosystem</h4>
+                    <p>Enhance liquidity in the local market, make it more efficient for local and international investors.</p>
                 </div>
             </div>
             <div class="cta-buttons">
@@ -503,6 +516,7 @@
 <script src="js/features-slider.js"></script>
 <script src="js/why-carousel.js"></script>
 <script src="js/architecture-tabs.js"></script>
+<script src="js/lang-switch.js"></script>
 <script src="js/hero-parallax.js"></script>
 </body>
 </html>
