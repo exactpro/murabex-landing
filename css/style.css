@@ -194,6 +194,7 @@ section {
 .btn-outline:hover {
     border-color: var(--gold);
     background: #363944;
+    transform: translateY(-1px);
 }
 
 /* Gold-bordered outline — secondary accent variant */
