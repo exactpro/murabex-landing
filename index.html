@@ -82,7 +82,156 @@
                     <div class="accordion-body-wrap">
                         <div class="accordion-body">
                             <p>Murabex offers flexible configuration and deployment options, enabling adaptation to the economic and regulatory landscape of each jurisdiction. The platform supports both decentralised and centralised setups among participants, provides a user interface and API integration and can be configured to operate with selected distributed ledger networks. The Murabex platform enables settlement on distributed ledgers, off-book or on-book, through integration with the national exchange infrastructure.</p>
-                            <img src="assets/images/Architecture.svg" alt="Architecture diagram" class="accordion-image">
+
+                            <div class="arch-diagram" data-active-flow="all">
+                                <div class="arch-tabs" role="tablist" aria-label="Configuration setup">
+                                    <button type="button" class="arch-tab is-active" data-flow="all" role="tab" aria-selected="true">All flows</button>
+                                    <button type="button" class="arch-tab" data-flow="decentralised" role="tab" aria-selected="false">Decentralised</button>
+                                    <button type="button" class="arch-tab" data-flow="centralised" role="tab" aria-selected="false">Centralised</button>
+                                    <button type="button" class="arch-tab" data-flow="integrated" role="tab" aria-selected="false">Integrated National Exchange</button>
+                                </div>
+
+                                <div class="arch-panel">
+                                <div class="arch-svg-scroll">
+                                <svg class="arch-svg" viewBox="0 0 1240 520" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram">
+                                    <defs>
+                                        <marker id="arr-internal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#7a8090"/></marker>
+                                        <marker id="arr-decentralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#5dc6d6"/></marker>
+                                        <marker id="arr-centralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#d4a53a"/></marker>
+                                        <marker id="arr-integrated" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#a385ff"/></marker>
+                                    </defs>
+
+                                    <!-- Section header chevrons -->
+                                    <g class="arch-section">
+                                        <path class="arch-chevron" d="M40,30 L420,30 L450,60 L420,90 L40,90 Z"/>
+                                        <text class="arch-chevron-title" x="220" y="56">Pre-trade</text>
+                                        <text class="arch-chevron-subtitle" x="220" y="76">(OMS)</text>
+                                    </g>
+                                    <g class="arch-section">
+                                        <path class="arch-chevron" d="M450,30 L820,30 L850,60 L820,90 L450,90 L480,60 Z"/>
+                                        <text class="arch-chevron-title" x="640" y="56">Trading</text>
+                                        <text class="arch-chevron-subtitle" x="640" y="76">(EMS)</text>
+                                    </g>
+                                    <g class="arch-section">
+                                        <path class="arch-chevron" d="M850,30 L1200,30 L1200,90 L850,90 L880,60 Z"/>
+                                        <text class="arch-chevron-title" x="1025" y="56">Post-trade</text>
+                                    </g>
+
+                                    <!-- Vertical dashed separators between sections -->
+                                    <line class="arch-separator" x1="435" y1="105" x2="435" y2="490"/>
+                                    <line class="arch-separator" x1="835" y1="105" x2="835" y2="490"/>
+
+                                    <!-- ARROWS (drawn first so boxes overlap them cleanly) -->
+
+                                    <!-- Internal pre-trade arrows (Core-banking ↕ WE, CRM ↕ WE) — neutral, bidirectional, always shown -->
+                                    <g class="arch-arrow" data-flow="all decentralised centralised integrated">
+                                        <line x1="220" y1="212" x2="220" y2="248" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
+                                    </g>
+                                    <g class="arch-arrow" data-flow="all decentralised centralised integrated">
+                                        <line x1="220" y1="332" x2="220" y2="368" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
+                                    </g>
+
+                                    <!-- WE ↔ DEX (decentralised, bidirectional) -->
+                                    <g class="arch-arrow" data-flow="all decentralised">
+                                        <path d="M360,270 L480,180" fill="none" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
+                                    </g>
+
+                                    <!-- WE ↔ CEX (centralised, bidirectional) -->
+                                    <g class="arch-arrow" data-flow="all centralised">
+                                        <line x1="362" y1="290" x2="478" y2="290" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
+                                    </g>
+
+                                    <!-- Murabex (WE) ↔ National Exchange (integrated, bidirectional) -->
+                                    <g class="arch-arrow" data-flow="all integrated">
+                                        <path d="M360,310 L480,400" fill="none" stroke="#a385ff" stroke-width="1.5" marker-start="url(#arr-integrated)" marker-end="url(#arr-integrated)"/>
+                                    </g>
+
+                                    <!-- DEX ↔ Distributed ledger (decentralised, bidirectional) -->
+                                    <g class="arch-arrow" data-flow="all decentralised">
+                                        <line x1="762" y1="180" x2="878" y2="180" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
+                                    </g>
+
+                                    <!-- CEX ↔ Distributed ledger (centralised, diagonal up, bidirectional) -->
+                                    <g class="arch-arrow" data-flow="all centralised">
+                                        <path d="M762,275 L878,200" fill="none" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
+                                    </g>
+
+                                    <!-- CEX → Exchange off-book (centralised) -->
+                                    <g class="arch-arrow" data-flow="all centralised">
+                                        <line x1="760" y1="295" x2="878" y2="295" stroke="#d4a53a" stroke-width="1.5" marker-end="url(#arr-centralised)"/>
+                                    </g>
+
+                                    <!-- Distributed ledger → Exchange off-book (centralised, vertical down) -->
+                                    <g class="arch-arrow" data-flow="all centralised">
+                                        <line x1="1020" y1="212" x2="1020" y2="248" stroke="#d4a53a" stroke-width="1.5" marker-end="url(#arr-centralised)"/>
+                                    </g>
+
+                                    <!-- National Exchange → Exchange on-book (integrated) -->
+                                    <g class="arch-arrow" data-flow="all integrated">
+                                        <line x1="760" y1="410" x2="878" y2="410" stroke="#a385ff" stroke-width="1.5" marker-end="url(#arr-integrated)"/>
+                                    </g>
+
+                                    <!-- NODES (boxes + labels) -->
+
+                                    <!-- Pre-trade column -->
+                                    <g class="arch-node" data-node="core-banking" data-flow="all decentralised centralised integrated">
+                                        <rect class="arch-box" data-tier="bank" x="80" y="130" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="220" y="167">Core-banking</text>
+                                        <text class="arch-sublabel" x="220" y="188">integration</text>
+                                    </g>
+                                    <g class="arch-node" data-node="murabex-we" data-flow="all decentralised centralised integrated">
+                                        <rect class="arch-box" data-tier="murabex" x="80" y="250" width="280" height="80" rx="6"/>
+                                        <text class="arch-label arch-label-gold" x="220" y="287">Murabex (WE)</text>
+                                        <text class="arch-sublabel" x="220" y="308">Workflow engine</text>
+                                    </g>
+                                    <g class="arch-node" data-node="crm" data-flow="all decentralised centralised integrated">
+                                        <rect class="arch-box" data-tier="bank" x="80" y="370" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="220" y="407">CRM</text>
+                                        <text class="arch-sublabel" x="220" y="428">integration</text>
+                                    </g>
+
+                                    <!-- Trading column -->
+                                    <g class="arch-node" data-node="murabex-dex" data-flow="all decentralised">
+                                        <rect class="arch-box" data-tier="murabex" x="480" y="130" width="280" height="80" rx="6"/>
+                                        <text class="arch-label arch-label-gold" x="620" y="167">Murabex (DEX)</text>
+                                        <text class="arch-sublabel" x="620" y="188">Peer-to-peer matching</text>
+                                    </g>
+                                    <g class="arch-node" data-node="murabex-cex" data-flow="all centralised">
+                                        <rect class="arch-box" data-tier="murabex" x="480" y="250" width="280" height="80" rx="6"/>
+                                        <text class="arch-label arch-label-gold" x="620" y="287">Murabex (CEX)</text>
+                                        <text class="arch-sublabel" x="620" y="308">Centralised matching</text>
+                                    </g>
+                                    <g class="arch-node" data-node="national-exchange" data-flow="all integrated">
+                                        <rect class="arch-box" data-tier="exchange" x="480" y="370" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="620" y="407">National Exchange</text>
+                                        <text class="arch-sublabel" x="620" y="428">(QoD / QDM)</text>
+                                    </g>
+
+                                    <!-- Post-trade column -->
+                                    <g class="arch-node" data-node="ledger" data-flow="all decentralised centralised">
+                                        <rect class="arch-box" data-tier="ledger" x="880" y="130" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="1020" y="178">Distributed ledger</text>
+                                    </g>
+                                    <g class="arch-node" data-node="exchange-offbook" data-flow="all centralised">
+                                        <rect class="arch-box" data-tier="exchange" x="880" y="250" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="1020" y="287">Exchange</text>
+                                        <text class="arch-sublabel" x="1020" y="308">off-book trades</text>
+                                    </g>
+                                    <g class="arch-node" data-node="exchange-onbook" data-flow="all integrated">
+                                        <rect class="arch-box" data-tier="exchange" x="880" y="370" width="280" height="80" rx="6"/>
+                                        <text class="arch-label" x="1020" y="407">Exchange</text>
+                                        <text class="arch-sublabel" x="1020" y="428">on-book trades</text>
+                                    </g>
+                                </svg>
+                                </div>
+
+                                <div class="arch-legend">
+                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-decentralised"></span>Decentralised setup</span>
+                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-centralised"></span>Centralised setup</span>
+                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-integrated"></span>Integrated National Exchange setup</span>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,7 +364,7 @@
 <!-- CAPABILITIES / KEY FEATURES -->
 <section class="features" id="features">
     <div class="container">
-        <p class="eyebrow">Capabilities</p>
+        <p class="eyebrow">Features</p>
         <h2 class="section-title">Technology Platform</h2>
         <p class="section-sub">Everything you need to run institutional-grade Islamic financing.</p>
 
@@ -353,6 +502,7 @@
 <script src="js/modal.js"></script>
 <script src="js/features-slider.js"></script>
 <script src="js/why-carousel.js"></script>
+<script src="js/architecture-tabs.js"></script>
 <script src="js/hero-parallax.js"></script>
 </body>
 </html>

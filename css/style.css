@@ -630,6 +630,214 @@ nav {
 }
 
 /* =========================================================
+   ARCHITECTURE DIAGRAM (accordion)
+   Inline SVG schema with 4 flow tabs (All / Decentralised /
+   Centralised / Integrated). Each node and arrow carries a
+   data-flow attribute listing flows it belongs to; CSS dims
+   non-matching elements when a specific tab is active.
+   ========================================================= */
+.arch-diagram {
+    margin: var(--s-3) 28px 24px;
+    max-width: calc(100% - 56px);
+}
+
+/* Browser-style tab strip — active tab merges into panel below */
+.arch-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: -1px;        /* overlap panel's top border */
+    position: relative;
+    z-index: 1;
+}
+
+.arch-tab {
+    background: rgba(20, 24, 33, 0.6);
+    border: 1px solid var(--gold);
+    border-bottom-color: transparent;
+    border-radius: 8px 8px 0 0;
+    color: var(--text-muted);
+    padding: 9px 18px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    margin-right: -1px;          /* overlap neighbour's side border */
+    position: relative;
+    transition: background .15s ease, color .15s ease;
+}
+.arch-tab:hover {
+    background: rgba(40, 46, 56, 0.85);
+    color: var(--text);
+}
+.arch-tab.is-active {
+    background: #0c0e14;          /* same as panel — visually merges */
+    color: var(--gold-light);
+    z-index: 2;
+}
+/* Active tab covers the 1px panel border underneath via the overlap */
+.arch-tab.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: #0c0e14;
+}
+
+/* Content panel — holds SVG + legend.
+   Border is a vertical gradient: solid gold at the top (so it joins
+   the tab strip cleanly) and fades to muted on the way down. */
+.arch-panel {
+    background:
+        linear-gradient(#0c0e14, #0c0e14) padding-box,
+        linear-gradient(180deg, var(--gold) 0%, var(--gold) 3%, rgba(201, 168, 76, 0.3) 12%, #2b2925 30%) border-box;
+    border: 1px solid transparent;
+    border-radius: 0 8px 8px 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.arch-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Section header chevrons */
+.arch-chevron {
+    fill: rgba(249, 225, 140, 0.04);
+    stroke: #3a3228;
+    stroke-width: 0.7;
+}
+.arch-chevron-title {
+    font-size: 14px;
+    font-weight: 600;
+    fill: #a89a72;
+    text-anchor: middle;
+}
+.arch-chevron-subtitle {
+    font-size: 11px;
+    fill: #75603e;
+    text-anchor: middle;
+}
+
+/* Vertical dashed dividers between sections */
+.arch-separator {
+    stroke: #75603e;
+    stroke-width: 1;
+    stroke-dasharray: 4 5;
+    opacity: 0.6;
+}
+
+/* Node boxes — fill + stroke per tier (so banks vs exchanges read
+   distinctly without relying on flow color) */
+.arch-box {
+    stroke-width: 1;
+    transition: opacity .25s ease;
+}
+/* Tier palette — picked to harmonize with the Lifecycle diagram:
+   bank uses the lifecycle "visited" blue, murabex the lifecycle "current"
+   gold. Ledger and exchanges sit between them. */
+.arch-box[data-tier="bank"]      { fill: rgba(74, 123, 255, 0.80);  stroke: #4A7BFF; }
+.arch-box[data-tier="murabex"]   { fill: rgba(225, 176, 71, 0.95);  stroke: #E1B047; }
+.arch-box[data-tier="ledger"]    { fill: rgba(93, 198, 232, 0.70);  stroke: #5dc6e8; }
+.arch-box[data-tier="exchange"]  { fill: rgba(163, 133, 255, 0.70); stroke: #a385ff; }
+
+/* Node text — white labels on saturated colored fills */
+.arch-label {
+    font-size: 14px;
+    font-weight: 700;
+    fill: #ffffff;
+    text-anchor: middle;
+}
+/* Dark text on Murabex (gold) fills for contrast */
+.arch-label-gold { fill: #1a1a1a; }
+.arch-sublabel {
+    font-size: 11px;
+    font-weight: 400;
+    fill: rgba(255, 255, 255, 0.85);
+    text-anchor: middle;
+}
+.arch-node[data-node^="murabex"] .arch-sublabel {
+    fill: rgba(26, 26, 26, 0.75);
+}
+
+/* Per-flow dimming: when a specific tab is active, fade out anything
+   whose data-flow doesn't include that flow. data-flow="all" is on
+   every element by default, so the All tab leaves everything visible. */
+.arch-node, .arch-arrow {
+    transition: opacity .25s ease;
+}
+.arch-diagram[data-active-flow="decentralised"] .arch-node:not([data-flow~="decentralised"]),
+.arch-diagram[data-active-flow="decentralised"] .arch-arrow:not([data-flow~="decentralised"]),
+.arch-diagram[data-active-flow="centralised"]  .arch-node:not([data-flow~="centralised"]),
+.arch-diagram[data-active-flow="centralised"]  .arch-arrow:not([data-flow~="centralised"]),
+.arch-diagram[data-active-flow="integrated"]   .arch-node:not([data-flow~="integrated"]),
+.arch-diagram[data-active-flow="integrated"]   .arch-arrow:not([data-flow~="integrated"]) {
+    opacity: 0.18;
+}
+
+/* Legend */
+.arch-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #1f242e;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.arch-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.arch-legend-line {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    border-radius: 1px;
+}
+.arch-legend-centralised   { background: #d4a53a; }
+.arch-legend-decentralised { background: #5dc6d6; }
+.arch-legend-integrated    { background: #a385ff; }
+
+/* Horizontal scroll wrapper — kicks in only when SVG min-width exceeds
+   the available width on narrow screens. Tabs/legend stay full-width. */
+.arch-svg-scroll {
+    overflow-x: auto;
+    margin: 0 -4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-arch) transparent;
+}
+.arch-svg-scroll::-webkit-scrollbar { height: 6px; }
+.arch-svg-scroll::-webkit-scrollbar-thumb {
+    background: var(--border-arch);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .arch-diagram {
+        margin: var(--s-3) 0 16px;
+        max-width: 100%;
+    }
+    .arch-panel {
+        padding: 14px;
+    }
+    .arch-svg {
+        min-width: 720px;
+    }
+    .arch-tab {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
    LIFECYCLE
    ========================================================= */
 .lifecycle { background: var(--bg-lifted); }
