@@ -1054,6 +1054,7 @@ nav {
 
 .why-slider { position: relative; }
 .why-slider-next { display: none; }
+.features-slider-next { display: none; }
 
 .why-grid {
     display: grid;
@@ -1746,42 +1747,27 @@ body.modal-open { overflow: hidden; }
     .features-slider {
         position: relative;
     }
-    .features-slider::after {
-        content: "";
+    .features-slider-next {
+        display: flex;
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 48px;
-        background: linear-gradient(to right, rgba(40, 42, 49, 0), var(--bg-medium));
-        pointer-events: none;
-        border-top-right-radius: var(--r-lg);
-        border-bottom-right-radius: var(--r-lg);
-        transition: opacity .3s ease;
-    }
-    .features-slider::before {
-        content: "";
-        position: absolute;
+        right: 12px;
         top: 50%;
-        right: 16px;
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid var(--gold);
-        border-right: 2px solid var(--gold);
-        transform: translateY(-50%) rotate(45deg);
-        pointer-events: none;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(13, 13, 13, 0.85);
+        border: none;
+        color: var(--gold-light);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
         z-index: 2;
-        animation: features-slider-hint 1.6s ease-in-out infinite;
-        transition: opacity .3s ease;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
     }
-    .features-slider.is-at-end::after,
-    .features-slider.is-at-end::before {
-        opacity: 0;
-    }
-    @keyframes features-slider-hint {
-        0%, 100% { transform: translate(0, -50%) rotate(45deg); }
-        50%      { transform: translate(4px, -50%) rotate(45deg); }
-    }
+    .features-slider-next svg { width: 16px; height: 16px; display: block; }
+    .features-slider-next:active { background: rgba(13, 13, 13, 0.95); }
     .features-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
@@ -1991,12 +1977,14 @@ body.modal-open { overflow: hidden; }
     transform: scaleX(-1);
 }
 
-/* Why-slider next arrow: button moves to the inline-end (left in RTL),
-   chevron mirrors so it still points toward the next card. */
-[dir="rtl"] .why-slider-next svg {
+/* Slider "next" buttons: move to the inline-end (left in RTL) and mirror
+   the chevron so it still points toward the next card. */
+[dir="rtl"] .why-slider-next svg,
+[dir="rtl"] .features-slider-next svg {
     transform: scaleX(-1);
 }
-[dir="rtl"] .why-slider-next {
+[dir="rtl"] .why-slider-next,
+[dir="rtl"] .features-slider-next {
     right: auto;
     left: 12px;
 }
