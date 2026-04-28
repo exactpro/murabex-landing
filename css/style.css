@@ -1645,12 +1645,16 @@ body.modal-open { overflow: hidden; }
     color: var(--gold);
 }
 
-/* Success message — Nutshell may emit either id, cover both */
+/* Thank-you / confirmation text after submit (Nutshell emits a <p> with
+   id="1CAaDV-success-message" and class="css-15evt26"; the form's own
+   stylesheet sets a brown colour and Nutshell-injected rules also set
+   alignment, so we cover both via #id and the doubled-class selector). */
 #nutshell-form-1CAaDV-success-message,
 #1CAaDV-success-message,
+#nutshell-form-1CAaDV .css-15evt26.css-15evt26,
 #nutshell-form-1CAaDV [class*="success"] {
-    color: var(--gold);
-    text-align: center;
+    color: var(--text) !important;
+    text-align: left !important;
     padding: 20px 0;
     font-size: 16px;
     line-height: 1.6;
