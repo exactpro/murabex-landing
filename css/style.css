@@ -1148,8 +1148,29 @@ nav {
 }
 
 .why-slider { position: relative; }
-.why-slider-next { display: none; }
-.features-slider-next { display: none; }
+
+/* Pagination dots — hidden on desktop, revealed in mobile media queries. */
+.why-slider-dots,
+.features-slider-dots { display: none; }
+
+/* Each dot is a button — JS injects them. Desktop fallback styling for
+   completeness even though the container is hidden. */
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(201, 168, 76, 0.25);
+    cursor: pointer;
+    transition: background .2s ease, width .2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+.slider-dot.is-active {
+    background: var(--gold);
+    width: 22px;
+    border-radius: 4px;
+}
 
 .why-grid {
     display: grid;
@@ -2021,27 +2042,12 @@ body.modal-open { overflow: hidden; }
     .features-slider {
         position: relative;
     }
-    .features-slider-next {
+    .features-slider-dots {
         display: flex;
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(13, 13, 13, 0.85);
-        border: none;
-        color: var(--gold-light);
-        align-items: center;
         justify-content: center;
-        cursor: pointer;
-        z-index: 2;
-        padding: 0;
-        -webkit-tap-highlight-color: transparent;
+        gap: 8px;
+        margin-top: 14px;
     }
-    .features-slider-next svg { width: 16px; height: 16px; display: block; }
-    .features-slider-next:active { background: rgba(13, 13, 13, 0.95); }
     .features-grid {
         grid-template-columns: none;
         grid-auto-flow: column;
@@ -2186,27 +2192,12 @@ body.modal-open { overflow: hidden; }
     }
     .w-card-wide { grid-column: auto; }
 
-    .why-slider-next {
+    .why-slider-dots {
         display: flex;
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(13, 13, 13, 0.85);
-        border: none;
-        color: var(--gold-light);
-        align-items: center;
         justify-content: center;
-        cursor: pointer;
-        z-index: 2;
-        padding: 0;
-        -webkit-tap-highlight-color: transparent;
+        gap: 8px;
+        margin-top: 14px;
     }
-    .why-slider-next svg { width: 16px; height: 16px; display: block; }
-    .why-slider-next:active { background: rgba(13, 13, 13, 0.95); }
 }
 
 /* =========================================================
@@ -2251,17 +2242,6 @@ body.modal-open { overflow: hidden; }
     transform: scaleX(-1);
 }
 
-/* Slider "next" buttons: move to the inline-end (left in RTL) and mirror
-   the chevron so it still points toward the next card. */
-[dir="rtl"] .why-slider-next svg,
-[dir="rtl"] .features-slider-next svg {
-    transform: scaleX(-1);
-}
-[dir="rtl"] .why-slider-next,
-[dir="rtl"] .features-slider-next {
-    right: auto;
-    left: 12px;
-}
 
 /* Accordion chevron: keep its expand/collapse motion intuitive. */
 [dir="rtl"] .accordion-icon {
