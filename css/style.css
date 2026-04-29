@@ -1017,6 +1017,7 @@ nav {
 
 .ui-marquee {
     margin-top: var(--s-3);
+    margin-bottom: var(--s-3);
     overflow: hidden;
     position: relative;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
