@@ -976,6 +976,88 @@ nav {
     flex-shrink: 0;
 }
 
+/* UI preview — collapsible marquee inside lifecycle section */
+.ui-preview {
+    margin-top: var(--s-4);
+}
+
+.ui-preview summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    color: var(--gold-light);
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(201, 168, 76, 0.06);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: var(--r-sm);
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.ui-preview summary::-webkit-details-marker { display: none; }
+.ui-preview summary::marker { content: ""; }
+
+.ui-preview summary::after {
+    content: "▾";
+    font-size: 11px;
+    transition: transform .2s ease;
+}
+
+.ui-preview[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.ui-preview summary:hover {
+    background: rgba(201, 168, 76, 0.1);
+    border-color: var(--gold);
+}
+
+.ui-marquee {
+    margin-top: var(--s-3);
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+}
+
+.ui-marquee-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: ui-marquee-scroll 50s linear infinite;
+}
+
+.ui-marquee:hover .ui-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes ui-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.ui-card {
+    height: 240px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+    border-radius: var(--r-md);
+    border: 1px solid var(--border-card);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ui-marquee-track { animation: none; }
+}
+
+@media (max-width: 720px) {
+    .ui-card { height: 180px; }
+    .ui-marquee-track { animation-duration: 35s; }
+}
+
 /* =========================================================
    CAPABILITIES / KEY FEATURES
    ========================================================= */
