@@ -22,8 +22,9 @@
         </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#configuration">Configuration</a></li>
+            <li><a href="#features">Technology</a></li>
             <li><a href="#lifecycle">Lifecycle</a></li>
-            <li><a href="#features">Features</a></li>
             <li><a href="#why">Why Murabex</a></li>
             <li><a href="#who">Who It's For</a></li>
             <li><a href="#team">Team</a></li>
@@ -33,7 +34,6 @@
             <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
             <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">عربى</button>
         </div>
-        <a href="#contact" class="btn-gold nav-cta open-contact">Request a Demo</a>
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span><span></span><span></span>
         </button>
@@ -47,12 +47,13 @@
         <button type="button" class="mobile-menu-close" aria-label="Close menu" data-menu-close>&times;</button>
         <ul class="mobile-menu-links">
             <li><a href="#about" data-menu-close><span class="mobile-menu-num">01</span>About</a></li>
-            <li><a href="#lifecycle" data-menu-close><span class="mobile-menu-num">02</span>Lifecycle</a></li>
-            <li><a href="#features" data-menu-close><span class="mobile-menu-num">03</span>Features</a></li>
-            <li><a href="#why" data-menu-close><span class="mobile-menu-num">04</span>Why Murabex</a></li>
-            <li><a href="#who" data-menu-close><span class="mobile-menu-num">05</span>Who it's for</a></li>
-            <li><a href="#team" data-menu-close><span class="mobile-menu-num">06</span>Team</a></li>
-            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">07</span>Contact</a></li>
+            <li><a href="#configuration" data-menu-close><span class="mobile-menu-num">02</span>Configuration</a></li>
+            <li><a href="#features" data-menu-close><span class="mobile-menu-num">03</span>Technology</a></li>
+            <li><a href="#lifecycle" data-menu-close><span class="mobile-menu-num">04</span>Lifecycle</a></li>
+            <li><a href="#why" data-menu-close><span class="mobile-menu-num">05</span>Why Murabex</a></li>
+            <li><a href="#who" data-menu-close><span class="mobile-menu-num">06</span>Who it's for</a></li>
+            <li><a href="#team" data-menu-close><span class="mobile-menu-num">07</span>Team</a></li>
+            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">08</span>Contact</a></li>
         </ul>
         <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language">
             <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
@@ -88,168 +89,6 @@
             </div>
 
             <div class="accordion">
-                <div class="accordion-item">
-                    <button type="button" class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Configuration and deployment options</span>
-                        <span class="accordion-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="accordion-body-wrap">
-                        <div class="accordion-body">
-                            <p>Murabex offers flexible configuration and deployment options, enabling adaptation to the economic and regulatory landscape of each jurisdiction. The platform supports both decentralised and centralised setups among participants, provides a user interface and API integration and can be configured to operate with selected distributed ledger networks. The Murabex platform enables settlement on distributed ledgers, off-book or on-book, through integration with the national exchange infrastructure.</p>
-
-                            <div class="arch-diagram" data-active-flow="all">
-                                <div class="arch-tabs" role="tablist" aria-label="Configuration setup">
-                                    <button type="button" class="arch-tab is-active" data-flow="all" role="tab" aria-selected="true">All flows</button>
-                                    <button type="button" class="arch-tab" data-flow="decentralised" role="tab" aria-selected="false">Decentralised</button>
-                                    <button type="button" class="arch-tab" data-flow="centralised" role="tab" aria-selected="false">Centralised</button>
-                                    <button type="button" class="arch-tab" data-flow="integrated" role="tab" aria-selected="false">Integrated</button>
-                                </div>
-
-                                <div class="arch-panel">
-                                <div class="arch-svg-scroll">
-                                <svg class="arch-svg" viewBox="0 0 1240 520" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram">
-                                    <defs>
-                                        <marker id="arr-internal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#7a8090"/></marker>
-                                        <marker id="arr-decentralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#5dc6d6"/></marker>
-                                        <marker id="arr-centralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#d4a53a"/></marker>
-                                        <marker id="arr-integrated" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#a385ff"/></marker>
-                                    </defs>
-
-                                    <!-- Section header chevrons -->
-                                    <g class="arch-section">
-                                        <path class="arch-chevron" d="M40,30 L420,30 L450,60 L420,90 L40,90 Z"/>
-                                        <text class="arch-chevron-title" x="230" y="56">Pre-trade</text>
-                                        <text class="arch-chevron-subtitle" x="230" y="76">(OMS)</text>
-                                    </g>
-                                    <g class="arch-section">
-                                        <path class="arch-chevron" d="M450,30 L820,30 L850,60 L820,90 L450,90 L480,60 Z"/>
-                                        <text class="arch-chevron-title" x="650" y="56">Trading</text>
-                                        <text class="arch-chevron-subtitle" x="650" y="76">(EMS)</text>
-                                    </g>
-                                    <g class="arch-section">
-                                        <path class="arch-chevron" d="M850,30 L1170,30 L1200,60 L1170,90 L850,90 L880,60 Z"/>
-                                        <text class="arch-chevron-title" x="1025" y="65">Post-trade</text>
-                                    </g>
-
-                                    <!-- Vertical dashed separators between sections -->
-                                    <line class="arch-separator" x1="435" y1="105" x2="435" y2="490"/>
-                                    <line class="arch-separator" x1="835" y1="105" x2="835" y2="490"/>
-
-                                    <!-- ARROWS (drawn first so boxes overlap them cleanly) -->
-
-                                    <!-- Internal pre-trade arrows (Core-banking ↕ WE, CRM ↕ WE) — neutral, bidirectional, always shown -->
-                                    <g class="arch-arrow" data-flow="all decentralised centralised integrated">
-                                        <line x1="220" y1="212" x2="220" y2="248" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
-                                    </g>
-                                    <g class="arch-arrow" data-flow="all decentralised centralised integrated">
-                                        <line x1="220" y1="332" x2="220" y2="368" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
-                                    </g>
-
-                                    <!-- WE ↔ DEX (decentralised, bidirectional) -->
-                                    <g class="arch-arrow" data-flow="all decentralised">
-                                        <path d="M360,270 L480,180" fill="none" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
-                                    </g>
-
-                                    <!-- WE ↔ CEX (centralised, bidirectional) -->
-                                    <g class="arch-arrow" data-flow="all centralised">
-                                        <line x1="362" y1="290" x2="478" y2="290" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
-                                    </g>
-
-                                    <!-- Murabex (WE) ↔ National Exchange (integrated, bidirectional) -->
-                                    <g class="arch-arrow" data-flow="all integrated">
-                                        <path d="M360,310 L480,400" fill="none" stroke="#a385ff" stroke-width="1.5" marker-start="url(#arr-integrated)" marker-end="url(#arr-integrated)"/>
-                                    </g>
-
-                                    <!-- DEX ↔ Distributed ledger (decentralised, bidirectional) -->
-                                    <g class="arch-arrow" data-flow="all decentralised">
-                                        <line x1="762" y1="180" x2="878" y2="180" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
-                                    </g>
-
-                                    <!-- CEX ↔ Distributed ledger (centralised, diagonal up, bidirectional) -->
-                                    <g class="arch-arrow" data-flow="all centralised">
-                                        <path d="M762,275 L878,200" fill="none" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
-                                    </g>
-
-                                    <!-- CEX → Exchange off-book (centralised) -->
-                                    <g class="arch-arrow" data-flow="all centralised">
-                                        <line x1="760" y1="295" x2="878" y2="295" stroke="#d4a53a" stroke-width="1.5" marker-end="url(#arr-centralised)"/>
-                                    </g>
-
-                                    <!-- Distributed ledger → Exchange off-book (decentralised, vertical down) -->
-                                    <g class="arch-arrow" data-flow="all decentralised">
-                                        <line x1="1020" y1="212" x2="1020" y2="248" stroke="#5dc6d6" stroke-width="1.5" marker-end="url(#arr-decentralised)"/>
-                                    </g>
-
-                                    <!-- National Exchange → Exchange on-book (integrated) -->
-                                    <g class="arch-arrow" data-flow="all integrated">
-                                        <line x1="760" y1="410" x2="878" y2="410" stroke="#a385ff" stroke-width="1.5" marker-end="url(#arr-integrated)"/>
-                                    </g>
-
-                                    <!-- NODES (boxes + labels) -->
-
-                                    <!-- Pre-trade column -->
-                                    <g class="arch-node" data-node="core-banking" data-flow="all decentralised centralised integrated">
-                                        <rect class="arch-box" data-tier="bank" x="80" y="130" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="220" y="167">Core-banking</text>
-                                        <text class="arch-sublabel" x="220" y="188">integration</text>
-                                    </g>
-                                    <g class="arch-node" data-node="murabex-we" data-flow="all decentralised centralised integrated">
-                                        <rect class="arch-box" data-tier="murabex" x="80" y="250" width="280" height="80" rx="6"/>
-                                        <text class="arch-label arch-label-gold" x="220" y="287">Murabex (WE)</text>
-                                        <text class="arch-sublabel" x="220" y="308">Workflow engine</text>
-                                    </g>
-                                    <g class="arch-node" data-node="crm" data-flow="all decentralised centralised integrated">
-                                        <rect class="arch-box" data-tier="bank" x="80" y="370" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="220" y="407">CRM</text>
-                                        <text class="arch-sublabel" x="220" y="428">integration</text>
-                                    </g>
-
-                                    <!-- Trading column -->
-                                    <g class="arch-node" data-node="murabex-dex" data-flow="all decentralised">
-                                        <rect class="arch-box" data-tier="murabex" x="480" y="130" width="280" height="80" rx="6"/>
-                                        <text class="arch-label arch-label-gold" x="620" y="167">Murabex (DEX)</text>
-                                        <text class="arch-sublabel" x="620" y="188">Peer-to-peer matching</text>
-                                    </g>
-                                    <g class="arch-node" data-node="murabex-cex" data-flow="all centralised">
-                                        <rect class="arch-box" data-tier="murabex" x="480" y="250" width="280" height="80" rx="6"/>
-                                        <text class="arch-label arch-label-gold" x="620" y="287">Murabex (CEX)</text>
-                                        <text class="arch-sublabel" x="620" y="308">Centralised matching</text>
-                                    </g>
-                                    <g class="arch-node" data-node="national-exchange" data-flow="all integrated">
-                                        <rect class="arch-box" data-tier="exchange" x="480" y="370" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="620" y="407">National Exchange</text>
-                                        <text class="arch-sublabel" x="620" y="428">(QoD / QDM)</text>
-                                    </g>
-
-                                    <!-- Post-trade column -->
-                                    <g class="arch-node" data-node="ledger" data-flow="all decentralised centralised">
-                                        <rect class="arch-box" data-tier="ledger" x="880" y="130" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="1020" y="178">Distributed ledger</text>
-                                    </g>
-                                    <g class="arch-node" data-node="exchange-offbook" data-flow="all decentralised centralised">
-                                        <rect class="arch-box" data-tier="exchange" x="880" y="250" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="1020" y="287">Exchange</text>
-                                        <text class="arch-sublabel" x="1020" y="308">off-book trades</text>
-                                    </g>
-                                    <g class="arch-node" data-node="exchange-onbook" data-flow="all integrated">
-                                        <rect class="arch-box" data-tier="exchange" x="880" y="370" width="280" height="80" rx="6"/>
-                                        <text class="arch-label" x="1020" y="407">Exchange</text>
-                                        <text class="arch-sublabel" x="1020" y="428">on-book trades</text>
-                                    </g>
-                                </svg>
-                                </div>
-
-                                <div class="arch-legend">
-                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-decentralised"></span>Decentralised setup</span>
-                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-centralised"></span>Centralised setup</span>
-                                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-integrated"></span>Integrated National Exchange setup</span>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="accordion-item">
                     <button type="button" class="accordion-header" aria-expanded="false">
                         <span class="accordion-title">Shari’ah Governance & Approval Registry</span>
@@ -310,6 +149,176 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONFIGURATION & DEPLOYMENT -->
+<section class="configuration" id="configuration">
+    <div class="container">
+        <p class="eyebrow">Architecture</p>
+        <h2 class="section-title">Configuration & Deployment</h2>
+        <p class="section-sub">Murabex offers flexible configuration and deployment options, enabling adaptation to the economic and regulatory landscape of each jurisdiction. The platform supports both decentralised and centralised setups among participants, provides a user interface and API integration and can be configured to operate with selected distributed ledger networks. The Murabex platform enables settlement on distributed ledgers, off-book or on-book, through integration with the national exchange infrastructure.</p>
+
+        <div class="arch-diagram" data-active-flow="all">
+            <div class="arch-tabs" role="tablist" aria-label="Configuration setup">
+                <button type="button" class="arch-tab is-active" data-flow="all" role="tab" aria-selected="true">All flows</button>
+                <button type="button" class="arch-tab" data-flow="decentralised" role="tab" aria-selected="false">Decentralised</button>
+                <button type="button" class="arch-tab" data-flow="centralised" role="tab" aria-selected="false">Centralised</button>
+                <button type="button" class="arch-tab" data-flow="integrated" role="tab" aria-selected="false">Integrated</button>
+            </div>
+
+            <div class="arch-panel">
+                <div class="arch-svg-scroll">
+                    <svg class="arch-svg" viewBox="0 0 1240 520" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram">
+                        <defs>
+                            <marker id="arr-internal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#7a8090"/></marker>
+                            <marker id="arr-decentralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#5dc6d6"/></marker>
+                            <marker id="arr-centralised" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#d4a53a"/></marker>
+                            <marker id="arr-integrated" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L8,3 L0,6 Z" fill="#a385ff"/></marker>
+                        </defs>
+
+                        <g class="arch-section">
+                            <path class="arch-chevron" d="M40,30 L420,30 L450,60 L420,90 L40,90 Z"/>
+                            <text class="arch-chevron-title" x="230" y="56">Pre-trade</text>
+                            <text class="arch-chevron-subtitle" x="230" y="76">(OMS)</text>
+                        </g>
+                        <g class="arch-section">
+                            <path class="arch-chevron" d="M450,30 L820,30 L850,60 L820,90 L450,90 L480,60 Z"/>
+                            <text class="arch-chevron-title" x="650" y="56">Trading</text>
+                            <text class="arch-chevron-subtitle" x="650" y="76">(EMS)</text>
+                        </g>
+                        <g class="arch-section">
+                            <path class="arch-chevron" d="M850,30 L1170,30 L1200,60 L1170,90 L850,90 L880,60 Z"/>
+                            <text class="arch-chevron-title" x="1025" y="65">Post-trade</text>
+                        </g>
+
+                        <line class="arch-separator" x1="435" y1="105" x2="435" y2="490"/>
+                        <line class="arch-separator" x1="835" y1="105" x2="835" y2="490"/>
+
+                        <g class="arch-arrow" data-flow="all decentralised centralised integrated">
+                            <line x1="220" y1="212" x2="220" y2="248" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
+                        </g>
+                        <g class="arch-arrow" data-flow="all decentralised centralised integrated">
+                            <line x1="220" y1="332" x2="220" y2="368" stroke="#7a8090" stroke-width="1.5" marker-start="url(#arr-internal)" marker-end="url(#arr-internal)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all decentralised">
+                            <path d="M360,270 L480,180" fill="none" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all centralised">
+                            <line x1="362" y1="290" x2="478" y2="290" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all integrated">
+                            <path d="M360,310 L480,400" fill="none" stroke="#a385ff" stroke-width="1.5" marker-start="url(#arr-integrated)" marker-end="url(#arr-integrated)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all decentralised">
+                            <line x1="762" y1="180" x2="878" y2="180" stroke="#5dc6d6" stroke-width="1.5" marker-start="url(#arr-decentralised)" marker-end="url(#arr-decentralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all centralised">
+                            <path d="M762,275 L878,200" fill="none" stroke="#d4a53a" stroke-width="1.5" marker-start="url(#arr-centralised)" marker-end="url(#arr-centralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all centralised">
+                            <line x1="760" y1="295" x2="878" y2="295" stroke="#d4a53a" stroke-width="1.5" marker-end="url(#arr-centralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all decentralised">
+                            <line x1="1020" y1="212" x2="1020" y2="248" stroke="#5dc6d6" stroke-width="1.5" marker-end="url(#arr-decentralised)"/>
+                        </g>
+
+                        <g class="arch-arrow" data-flow="all integrated">
+                            <line x1="760" y1="410" x2="878" y2="410" stroke="#a385ff" stroke-width="1.5" marker-end="url(#arr-integrated)"/>
+                        </g>
+
+                        <g class="arch-node" data-node="core-banking" data-flow="all decentralised centralised integrated">
+                            <rect class="arch-box" data-tier="bank" x="80" y="130" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="220" y="167">Core-banking</text>
+                            <text class="arch-sublabel" x="220" y="188">integration</text>
+                        </g>
+                        <g class="arch-node" data-node="murabex-we" data-flow="all decentralised centralised integrated">
+                            <rect class="arch-box" data-tier="murabex" x="80" y="250" width="280" height="80" rx="6"/>
+                            <text class="arch-label arch-label-gold" x="220" y="287">Murabex (WE)</text>
+                            <text class="arch-sublabel" x="220" y="308">Workflow engine</text>
+                        </g>
+                        <g class="arch-node" data-node="crm" data-flow="all decentralised centralised integrated">
+                            <rect class="arch-box" data-tier="bank" x="80" y="370" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="220" y="407">CRM</text>
+                            <text class="arch-sublabel" x="220" y="428">integration</text>
+                        </g>
+
+                        <g class="arch-node" data-node="murabex-dex" data-flow="all decentralised">
+                            <rect class="arch-box" data-tier="murabex" x="480" y="130" width="280" height="80" rx="6"/>
+                            <text class="arch-label arch-label-gold" x="620" y="167">Murabex (DEX)</text>
+                            <text class="arch-sublabel" x="620" y="188">Peer-to-peer matching</text>
+                        </g>
+                        <g class="arch-node" data-node="murabex-cex" data-flow="all centralised">
+                            <rect class="arch-box" data-tier="murabex" x="480" y="250" width="280" height="80" rx="6"/>
+                            <text class="arch-label arch-label-gold" x="620" y="287">Murabex (CEX)</text>
+                            <text class="arch-sublabel" x="620" y="308">Centralised matching</text>
+                        </g>
+                        <g class="arch-node" data-node="national-exchange" data-flow="all integrated">
+                            <rect class="arch-box" data-tier="exchange" x="480" y="370" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="620" y="407">National Exchange</text>
+                            <text class="arch-sublabel" x="620" y="428">(QoD / QDM)</text>
+                        </g>
+
+                        <g class="arch-node" data-node="ledger" data-flow="all decentralised centralised">
+                            <rect class="arch-box" data-tier="ledger" x="880" y="130" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="1020" y="178">Distributed ledger</text>
+                        </g>
+                        <g class="arch-node" data-node="exchange-offbook" data-flow="all decentralised centralised">
+                            <rect class="arch-box" data-tier="exchange" x="880" y="250" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="1020" y="287">Exchange</text>
+                            <text class="arch-sublabel" x="1020" y="308">off-book trades</text>
+                        </g>
+                        <g class="arch-node" data-node="exchange-onbook" data-flow="all integrated">
+                            <rect class="arch-box" data-tier="exchange" x="880" y="370" width="280" height="80" rx="6"/>
+                            <text class="arch-label" x="1020" y="407">Exchange</text>
+                            <text class="arch-sublabel" x="1020" y="428">on-book trades</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="arch-legend">
+                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-decentralised"></span>Decentralised setup</span>
+                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-centralised"></span>Centralised setup</span>
+                    <span class="arch-legend-item"><span class="arch-legend-line arch-legend-integrated"></span>Integrated National Exchange setup</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAPABILITIES / KEY FEATURES -->
+<section class="features" id="features">
+    <div class="container">
+        <p class="eyebrow">Features</p>
+        <h2 class="section-title">Technology Platform</h2>
+        <p class="section-sub">Everything you need to run institutional-grade Islamic financing.</p>
+
+        <div class="features-slider">
+        <div class="features-grid">
+            <div class="f-card"><h3>Quote Engine</h3><p>Low-latency RFQ matching engine. Coordinates competitive responses to unilateral promises (Waʿd) from multiple independent liquidity providers.</p></div>
+            <div class="f-card"><h3>Murabaha Agreements</h3><p>Complete end-to-end workflow execution and agreement lifecycle from draft to settlement. Shari’ah-compliant asset basket composition and linkage to quotes and ledger operations.</p></div>
+            <div class="f-card"><h3>User Interface</h3><p>Professional UI with real-time agreement management, market data, order book and quote management &ndash; seamlessly integrated with the Murabaha agreement workflow and settlement process.</p></div>
+            <div class="f-card"><h3>Liquidity Provider Scoring</h3><p>Automated effectiveness scoring: response rate, response time, execution rate, price quality and fill ratio. Historical snapshots for trend analysis. Supports the selection of the best available liquidity providers.</p></div>
+            <div class="f-card"><h3>Reference Data Management</h3><p>Centralised hub for users, participants, currencies, instruments, trading venues, price tick tables and risk parameters. Maintains a registry of all relevant Shari’ah approvals issued by internal and external governing bodies.</p></div>
+            <div class="f-card"><h3>Compliance-native</h3><p>Immutable audit trail with full before/after state snapshots for every operation. Built-in Shari’ah approval workflow with jurisdiction binding, issuing body tracking and conformance verification across messages, state transitions and traceability.</p></div>
+            <div class="f-card"><h3>Tokenised assets</h3><p>Digital representation of financial assets on a distributed ledger. Full lifecycle management &ndash; from issuance through transfer to redemption &ndash; with transparent ownership tracking.</p></div>
+            <div class="f-card"><h3>Distributed Ledger</h3><p>Dual-mode settlement: off-chain and on-chain. Issue, transfer, redeem and lock/unlock tokenized assets with drop-copy replication. Operates as DLT Orchestrator and adapter interface.</p></div>
+            <div class="f-card"><h3>Settlement</h3><p>Executes transfers through exchange-negotiated trades and established clearing infrastructure, so every transfer is legally valid, formally recognised and fully auditable.</p></div>
+            <div class="f-card"><h3>Easy integration into existing institutional ecosystems</h3><p>Designed to connect with the existing pre-trade, trading and post-trade FI infrastructure.</p></div>
+            <div class="f-card"><h3>Cloud-native scalability for accelerated deployment</h3><p>Deployed as containerised, orchestrated services with zero-downtime deployment. Supports per-institution deployment and jurisdiction-bound data residency for operational and regulatory compliance.</p></div>
+            <div class="f-card"><h3>Auth &amp; Access Control</h3><p>Role-based access control with participant-scoped data filtering. Each user sees only their organisation's data, with a full audit trail of all actions.</p></div>
+        </div>
+        <button type="button" class="features-slider-next" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
         </div>
     </div>
 </section>
@@ -381,35 +390,6 @@
             <span class="lc-legend-item"><span class="lc-legend-box lc-legend-current"></span>Current</span>
             <span class="lc-legend-item"><span class="lc-legend-box lc-legend-pending"></span>Pending</span>
             <span class="lc-legend-item"><span class="lc-legend-line-dashed"></span>Possible</span>
-        </div>
-    </div>
-</section>
-
-<!-- CAPABILITIES / KEY FEATURES -->
-<section class="features" id="features">
-    <div class="container">
-        <p class="eyebrow">Features</p>
-        <h2 class="section-title">Technology Platform</h2>
-        <p class="section-sub">Everything you need to run institutional-grade Islamic financing.</p>
-
-        <div class="features-slider">
-        <div class="features-grid">
-            <div class="f-card"><h3>Quote Engine</h3><p>Low-latency RFQ matching engine. Coordinates competitive responses to unilateral promises (Waʿd) from multiple independent liquidity providers.</p></div>
-            <div class="f-card"><h3>Murabaha Agreements</h3><p>Complete end-to-end workflow execution and agreement lifecycle from draft to settlement. Shari’ah-compliant asset basket composition and linkage to quotes and ledger operations.</p></div>
-            <div class="f-card"><h3>User Interface</h3><p>Professional UI with real-time agreement management, market data, order book and quote management &ndash; seamlessly integrated with the Murabaha agreement workflow and settlement process.</p></div>
-            <div class="f-card"><h3>Liquidity Provider Scoring</h3><p>Automated effectiveness scoring: response rate, response time, execution rate, price quality and fill ratio. Historical snapshots for trend analysis. Supports the selection of the best available liquidity providers.</p></div>
-            <div class="f-card"><h3>Reference Data Management</h3><p>Centralised hub for users, participants, currencies, instruments, trading venues, price tick tables and risk parameters. Maintains a registry of all relevant Shari’ah approvals issued by internal and external governing bodies.</p></div>
-            <div class="f-card"><h3>Compliance-native</h3><p>Immutable audit trail with full before/after state snapshots for every operation. Built-in Shari’ah approval workflow with jurisdiction binding, issuing body tracking and conformance verification across messages, state transitions and traceability.</p></div>
-            <div class="f-card"><h3>Tokenised assets</h3><p>Digital representation of financial assets on a distributed ledger. Full lifecycle management &ndash; from issuance through transfer to redemption &ndash; with transparent ownership tracking.</p></div>
-            <div class="f-card"><h3>Distributed Ledger</h3><p>Dual-mode settlement: off-chain and on-chain. Issue, transfer, redeem and lock/unlock tokenized assets with drop-copy replication. Operates as DLT Orchestrator and adapter interface.</p></div>
-            <div class="f-card"><h3>Settlement</h3><p>Executes transfers through exchange-negotiated trades and established clearing infrastructure, so every transfer is legally valid, formally recognised and fully auditable.</p></div>
-            <div class="f-card"><h3>Easy integration into existing institutional ecosystems</h3><p>Designed to connect with the existing pre-trade, trading and post-trade FI infrastructure.</p></div>
-            <div class="f-card"><h3>Cloud-native scalability for accelerated deployment</h3><p>Deployed as containerised, orchestrated services with zero-downtime deployment. Supports per-institution deployment and jurisdiction-bound data residency for operational and regulatory compliance.</p></div>
-            <div class="f-card"><h3>Auth &amp; Access Control</h3><p>Role-based access control with participant-scoped data filtering. Each user sees only their organisation's data, with a full audit trail of all actions.</p></div>
-        </div>
-        <button type="button" class="features-slider-next" aria-label="Next slide">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
         </div>
     </div>
 </section>

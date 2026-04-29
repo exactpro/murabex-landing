@@ -714,9 +714,9 @@ nav {
     border-bottom-color: transparent;
     border-radius: 8px 8px 0 0;
     color: var(--text-muted);
-    padding: 9px 18px;
+    padding: 11px 22px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     font-family: inherit;
     margin-right: -1px;          /* overlap neighbour's side border */
@@ -770,13 +770,13 @@ nav {
     stroke-width: 1;
 }
 .arch-chevron-title {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     fill: var(--gold-light);
     text-anchor: middle;
 }
 .arch-chevron-subtitle {
-    font-size: 11px;
+    font-size: 14px;
     fill: #a89a72;
     text-anchor: middle;
 }
@@ -808,7 +808,7 @@ nav {
    (gold) tiles for contrast. */
 .arch-label,
 .arch-sublabel {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     fill: #ffffff;
     text-anchor: middle;
@@ -885,17 +885,20 @@ nav {
         min-width: 720px;
     }
     .arch-tab {
-        padding: 7px 12px;
-        font-size: 12px;
+        padding: 8px 14px;
+        font-size: 14px;
     }
 }
 
 /* =========================================================
    LIFECYCLE
    ========================================================= */
-.lifecycle { background: var(--bg-lifted); }
+.configuration { background: var(--bg-lifted); }
+
+.lifecycle { background: var(--bg-medium); }
 
 .lifecycle .section-sub { max-width: 100%; }
+.configuration .section-sub { max-width: 100%; }
 
 .lifecycle-scroll {
     overflow-x: auto;
@@ -976,7 +979,7 @@ nav {
 /* =========================================================
    CAPABILITIES / KEY FEATURES
    ========================================================= */
-.features { background: var(--bg-medium); }
+.features { background: var(--bg); }
 
 .features-grid {
     display: grid;
