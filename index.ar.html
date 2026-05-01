@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#0a0a0a">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     <title>Murabex — منصة الأصول الرقمية</title>
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +24,8 @@
         </a>
         <ul class="nav-links">
             <li><a href="#about">نبذة</a></li>
-            <li><a href="#configuration">التكوين</a></li>
-            <li><a href="#features">الميزات</a></li>
-            <li><a href="#lifecycle">دورة الحياة</a></li>
+            <li><a href="#configuration">الميزات</a></li>
             <li><a href="#why">لماذا Murabex</a></li>
-            <li><a href="#who">لمن</a></li>
             <li><a href="#team">الفريق</a></li>
             <li><a href="#contact">التواصل</a></li>
         </ul>
@@ -47,13 +46,10 @@
         <button type="button" class="mobile-menu-close" aria-label="Close menu" data-menu-close>&times;</button>
         <ul class="mobile-menu-links">
             <li><a href="#about" data-menu-close><span class="mobile-menu-num">01</span>نبذة</a></li>
-            <li><a href="#configuration" data-menu-close><span class="mobile-menu-num">02</span>التكوين</a></li>
-            <li><a href="#features" data-menu-close><span class="mobile-menu-num">03</span>الميزات</a></li>
-            <li><a href="#lifecycle" data-menu-close><span class="mobile-menu-num">04</span>دورة الحياة</a></li>
-            <li><a href="#why" data-menu-close><span class="mobile-menu-num">05</span>لماذا Murabex</a></li>
-            <li><a href="#who" data-menu-close><span class="mobile-menu-num">06</span>لمن</a></li>
-            <li><a href="#team" data-menu-close><span class="mobile-menu-num">07</span>الفريق</a></li>
-            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">08</span>التواصل</a></li>
+            <li><a href="#configuration" data-menu-close><span class="mobile-menu-num">02</span>الميزات</a></li>
+            <li><a href="#why" data-menu-close><span class="mobile-menu-num">03</span>لماذا Murabex</a></li>
+            <li><a href="#team" data-menu-close><span class="mobile-menu-num">04</span>الفريق</a></li>
+            <li><a href="#contact" data-menu-close><span class="mobile-menu-num">05</span>التواصل</a></li>
         </ul>
         <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language">
             <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -81,8 +77,6 @@
 <section class="about" id="about">
     <div class="container">
         <div class="about-box">
-            <p class="eyebrow">عن MURABEX</p>
-            <h2 class="section-title">متوافقة مع الشريعة، مدفوعة بالمجتمع، موثوقة وفعّالة</h2>
             <div class="about-text">
                 <p>Murabex منصة بورصة رقمية بمستوى مؤسسي تُمكّن المؤسسات المالية من تبسيط تنفيذ اتفاقيات المرابحة لعملائها. وكجزء من خدمة تعاونية مدفوعة بالمجتمع، تجمع المنصة كبار أعضاء البورصة والمقاصة الذين لا يخدمون عملاءهم فحسب، بل يوفّرون أيضًا السيولة للمشاركين الآخرين. والنتيجة هي منظومة مشتركة يعزّز فيها تيسير العملاء وتوفير السيولة بعضهما البعض.</p>
                 <p>تثبيت سيولة التمويل الإسلامي محليًا. تركيز التدفقات داخل السوق الوطني من خلال ربط المؤسسات المحلية والبورصة الوطنية والمستثمرين الدوليين عبر منصة سيادية موثوقة. تحسين الكفاءة وتوسيع المشاركة والاحتفاظ بمزيد من القيمة محليًا.</p>
@@ -158,10 +152,41 @@
     </div>
 </section>
 
+<!-- PARTICIPANTS -->
+<section class="who-section" id="who">
+    <div class="container">
+        <h2 class="section-title">المشاركون</h2>
+        <div class="audience-box">
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <img src="assets/icons/audience/banks-customers.svg" alt="" class="audience-icon">
+                    <h4>البنوك المُنشئة والعملاء</h4>
+                    <p>تُنفّذ البنوك صفقات المرابحة من خلال الاستحواذ على الأصل وامتلاكه، ثم بيعه للعملاء بشروط التكلفة-زائد المُفصَح عنها. يستلم العملاء الأصل ويسدّدون وفق جدول مؤجّل.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/liquidity-2.svg" alt="" class="audience-icon">
+                    <h4>مزوّدو السيولة</h4>
+                    <p>مزوّدو السيولة &ndash; المتداولون اليوميون/البنوك والخزائن المؤسسية &ndash; يوفّرون سيولة التسوية على السلسلة المستخدمة في الأرجل النقدية لكل صفقة مرابحة.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/national-exchange.svg" alt="" class="audience-icon">
+                    <h4>البورصة الوطنية</h4>
+                    <p>تستضيف البورصة الوطنية مكان التداول. تُوفّر الإدراج والمطابقة وسجلات التسوية كصفقات متفاوض عليها عبر البورصة.</p>
+                </div>
+                <div class="audience-card">
+                    <img src="assets/icons/audience/regulators.svg" alt="" class="audience-icon">
+                    <h4>الجهات التنظيمية</h4>
+                    <p>دور إشرافي &ndash; الهيئة الشرعية والجهة المنظِّمة المالية، حسب الولاية القضائية. وصول مراقب إلى الدفتر للإشراف الهيكلي المستمر.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONFIGURATION & DEPLOYMENT -->
 <section class="configuration" id="configuration">
     <div class="container">
-        <p class="eyebrow">البنية</p>
+        <p class="eyebrow">تكامل المنظومة</p>
         <h2 class="section-title">التكوين والنشر</h2>
         <p class="section-sub">تُتيح Murabex خيارات تكوين ونشر مرنة، تُمكّن من التكيّف مع المشهد الاقتصادي والتنظيمي في كل ولاية قضائية. تدعم المنصة الإعدادات اللامركزية والمركزية بين المشاركين، وتوفّر واجهة مستخدم وتكاملًا عبر واجهات برمجة التطبيقات (API)، ويمكن تكوينها للعمل مع شبكات دفاتر موزّعة مختارة. تُمكّن منصة Murabex التسوية على الدفاتر الموزّعة، خارج الكتب أو داخلها، من خلال التكامل مع البنية التحتية للبورصة الوطنية.</p>
 
@@ -329,7 +354,7 @@
 <!-- AGREEMENT LIFECYCLE -->
 <section class="lifecycle" id="lifecycle">
     <div class="container">
-        <p class="eyebrow">سير العمل</p>
+        <p class="eyebrow">تدفقات العمل</p>
         <h2 class="section-title">دورة حياة الاتفاقية</h2>
         <p class="section-sub">تتقدّم اتفاقية المرابحة عبر حالات مُتحكَّم بها &ndash; مع مسارات عودة لإعادة المراجعة ودورات اكتساب متكرّرة. تُحكَم كل مرحلة بالأذونات المبنية على الأدوار وتُسجَّل في سجل تدقيق غير قابل للتغيير.</p>
 
@@ -424,37 +449,6 @@
             <div class="w-card"><img src="assets/icons/why/full-audit-trail.svg" alt="" class="w-icon"><h4>سجل تدقيق كامل</h4><p>كل عملية تُسجَّل بشكل غير قابل للتغيير. لقطات قبل/بعد كاملة لجميع تغييرات الحالة.</p></div>
         </div>
         <div class="why-slider-dots" role="tablist" aria-label="Slide navigation"></div>
-        </div>
-    </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section class="who-section" id="who">
-    <div class="container">
-        <h2 class="section-title">لمن</h2>
-        <div class="audience-box">
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <img src="assets/icons/audience/banks-customers.svg" alt="" class="audience-icon">
-                    <h4>البنوك المُنشئة والعملاء</h4>
-                    <p>تُنفّذ البنوك صفقات المرابحة من خلال الاستحواذ على الأصل وامتلاكه، ثم بيعه للعملاء بشروط التكلفة-زائد المُفصَح عنها. يستلم العملاء الأصل ويسدّدون وفق جدول مؤجّل.</p>
-                </div>
-                <div class="audience-card">
-                    <img src="assets/icons/audience/liquidity.svg" alt="" class="audience-icon">
-                    <h4>مزوّدو السيولة</h4>
-                    <p>مزوّدو السيولة &ndash; المتداولون اليوميون/البنوك والخزائن المؤسسية &ndash; يوفّرون سيولة التسوية على السلسلة المستخدمة في الأرجل النقدية لكل صفقة مرابحة.</p>
-                </div>
-                <div class="audience-card">
-                    <img src="assets/icons/audience/national-exchange.svg" alt="" class="audience-icon">
-                    <h4>البورصة الوطنية</h4>
-                    <p>تستضيف البورصة الوطنية مكان التداول. تُوفّر الإدراج والمطابقة وسجلات التسوية كصفقات متفاوض عليها عبر البورصة.</p>
-                </div>
-                <div class="audience-card">
-                    <img src="assets/icons/audience/regulators.svg" alt="" class="audience-icon">
-                    <h4>الجهات التنظيمية</h4>
-                    <p>دور إشرافي &ndash; الهيئة الشرعية والجهة المنظِّمة المالية، حسب الولاية القضائية. وصول مراقب إلى الدفتر للإشراف الهيكلي المستمر.</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -564,10 +558,12 @@
                 <a href="https://x.com/murabex" aria-label="X" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
                 </a>
-                <a href="#" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@murabex" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.498 6.186c-.276-1.039-1.089-1.858-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504C1.591 4.328.778 5.147.502 6.186 0 8.07 0 12 0 12s0 3.93.502 5.814c.276 1.039 1.089 1.858 2.122 2.136 1.871.504 9.377.504 9.377.504s7.505 0 9.377-.504c1.032-.278 1.846-1.097 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z"/></svg>
                 </a>
             </div>
+        </div>
+        <div class="footer-bottom">
             <div class="footer-copy">&copy; 2026 Murabex. جميع الحقوق محفوظة.</div>
         </div>
     </div>
